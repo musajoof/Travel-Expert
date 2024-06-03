@@ -57,6 +57,11 @@ function App() {
   const [showHotel11, setShowHotel11] = useState(false);
   const [showHotel12, setShowHotel12] = useState(false);
   const [showCruise1, setShowCruise1] = useState(false);
+  const [showCruise2, setShowCruise2] = useState(false);
+  const [showCruise3, setShowCruise3] = useState(false);
+  const [showCruise4, setShowCruise4] = useState(false);
+  const [showCruise5, setShowCruise5] = useState(false);
+  const [showCruise6, setShowCruise6] = useState(false);
 
   const handleMoreDetails1 = () => {
     setShowHotel1(!showHotel1);
@@ -120,6 +125,21 @@ function App() {
 
   const handleCruiseDetails1 = () => {
     setShowCruise1(!showCruise1); // Toggle the showCruise1 state
+  };
+  const handleCruiseDetails2 = () => {
+    setShowCruise2(!showCruise2); // Toggle the showCruise1 state
+  };
+  const handleCruiseDetails3 = () => {
+    setShowCruise3(!showCruise3); // Toggle the showCruise1 state
+  };
+  const handleCruiseDetails4 = () => {
+    setShowCruise4(!showCruise4); // Toggle the showCruise1 state
+  };
+  const handleCruiseDetails5 = () => {
+    setShowCruise5(!showCruise5); // Toggle the showCruise1 state
+  };
+  const handleCruiseDetails6 = () => {
+    setShowCruise6(!showCruise6); // Toggle the showCruise1 state
   };
  
   return (
@@ -851,6 +871,7 @@ function App() {
             </div>
 
             <div className='grid grid-cols-3 gap-3'>
+              {/* The cruise 1 details start here  */}
               <div className='w-96 h-[600px]  '>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Cruise1} alt="" />
@@ -875,7 +896,6 @@ function App() {
 
                   </div>  
                 </div>}
-                {/* {The Cruise 1 details end here} */}
                 
                   <p>cruise Line</p>
                   <h1 className='text-xl'>Royal Caribbean International</h1>
@@ -888,12 +908,31 @@ function App() {
                   <p>Promotion(s)</p>
                 </div>
               </div>
+               {/* {The Cruise 1 details end here} */}
+
+                {/* The cruise 2 details start here */}
               <div className='w-96 h-[600px] '>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Cruise2} alt="" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold'>Eastern Caribbean With Bahamas</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleCruiseDetails2}>Eastern Caribbean With Bahamas</button>
+                {showCruise2 && <div className='w-[80rem] border relative -ml-[460px] mt-5'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Cruise2} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64 h-screen'>
+                    <h1 className='pt-5 text-6xl font-serif'>Royal Caribbean International</h1>
+                    <h2 className='mt-3 text-4xl font-semibold'>Miami, FL United States</h2>
+                    <div className='m-auto w-32 mt-8'>
+                      <p>Address</p>
+                      <p>1080 Caribbean Way Miami, Florida 33132 United States</p>
+                    </div>
+
+                    <p className='mt-5 leading-8 tracking-wide'> Royal Caribbean International has been delivering innovation at sea for more than 50 years. Each successive class of ships presents a new architectural marvel, enhanced with the latest technology and ever more exciting guest experiences for today’s adventurous traveler. The cruise line sails 26 ships to more than 270 destinations in 72 countries on six continents, including the Royal Caribbean private island in The Bahamas, Perfect Day at CocoCay. Royal Caribbean has also been voted “Best Cruise Line Overall” for 18 consecutive years in the Travel Weekly Readers’ Choice Awards. </p>
+
+                  </div>  
+                </div>}
                   <p>cruise Line</p>
                   <h1 className='text-xl'>Royal Caribbean International</h1>
 
@@ -905,12 +944,32 @@ function App() {
                   <p>Promotion(s)</p>
                 </div>
               </div>
+              {/* The cruise 2 details end here */}
+
+
+              {/* The cruise 3 details start here */}
               <div className='w-96 h-[600px] '>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Cruise3} alt="" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold'>Western Caribbean Charm</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleCruiseDetails3}>Western Caribbean Charm</button>
+                {showCruise3 && <div className='w-[80rem] border relative -ml-[880px] mt-5'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Cruise3} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64 h-screen'>
+                    <h1 className='pt-5 text-6xl font-serif'>Royal Caribbean International</h1>
+                    <h2 className='mt-3 text-4xl font-semibold'>Miami, FL United States</h2>
+                    <div className='m-auto w-32 mt-8'>
+                      <p>Address</p>
+                      <p>1080 Caribbean Way Miami, Florida 33132 United States</p>
+                    </div>
+
+                    <p className='mt-5 leading-8 tracking-wide'> Royal Caribbean International has been delivering innovation at sea for more than 50 years. Each successive class of ships presents a new architectural marvel, enhanced with the latest technology and ever more exciting guest experiences for today’s adventurous traveler. The cruise line sails 26 ships to more than 270 destinations in 72 countries on six continents, including the Royal Caribbean private island in The Bahamas, Perfect Day at CocoCay. Royal Caribbean has also been voted “Best Cruise Line Overall” for 18 consecutive years in the Travel Weekly Readers’ Choice Awards. </p>
+
+                  </div>  
+                </div>}
                   <p>cruise Line</p>
                   <h1 className='text-xl'>Royal Caribbean International</h1>
 
@@ -922,12 +981,31 @@ function App() {
                   <p>Promotion(s)</p>
                 </div>
               </div>
+              {/* The cruise 3 details end here  */}
+
+              {/* The cruise 4 details start here  */}
               <div className='w-96 h-[600px] '>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Cruise4} alt="" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold'>Western Caribbean</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleCruiseDetails4}>Western Caribbean</button>
+                {showCruise4 && <div className='w-[80rem] border relative -ml-[60px] mt-5'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Cruise4} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64 h-screen'>
+                    <h1 className='pt-5 text-6xl font-serif'>Royal Caribbean International</h1>
+                    <h2 className='mt-3 text-4xl font-semibold'>Miami, FL United States</h2>
+                    <div className='m-auto w-32 mt-8'>
+                      <p>Address</p>
+                      <p>1080 Caribbean Way Miami, Florida 33132 United States</p>
+                    </div>
+
+                    <p className='mt-5 leading-8 tracking-wide'> Royal Caribbean International has been delivering innovation at sea for more than 50 years. Each successive class of ships presents a new architectural marvel, enhanced with the latest technology and ever more exciting guest experiences for today’s adventurous traveler. The cruise line sails 26 ships to more than 270 destinations in 72 countries on six continents, including the Royal Caribbean private island in The Bahamas, Perfect Day at CocoCay. Royal Caribbean has also been voted “Best Cruise Line Overall” for 18 consecutive years in the Travel Weekly Readers’ Choice Awards. </p>
+
+                  </div>  
+                </div>}
                   <p>cruise Line</p>
                   <h1 className='text-xl'>Royal Caribbean International</h1>
 
@@ -939,12 +1017,31 @@ function App() {
                   <p>Promotion(s)</p>
                 </div>
               </div>
+              {/* The cruise 4 details end here  */}
+
+              {/* The cruise 5 details stat here  */}         
               <div className='w-96 h-[600px] '>
               <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Cruise5} alt="" />
                 </div>
                   <div className='text-center mt-3 px-10'>
-                  <button className='text-red-500 text-2xl font-semibold'>Sète to Avignon</button>
+                  <button className='text-red-500 text-2xl font-semibold' onClick={handleCruiseDetails5}>Sète to Avignon</button>
+                  {showCruise5 && <div className='w-[80rem] border relative -ml-[460px] mt-5'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Cruise5} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64 h-screen'>
+                    <h1 className='pt-5 text-6xl font-serif'>Royal Caribbean International</h1>
+                    <h2 className='mt-3 text-4xl font-semibold'>Miami, FL United States</h2>
+                    <div className='m-auto w-32 mt-8'>
+                      <p>Address</p>
+                      <p>1080 Caribbean Way Miami, Florida 33132 United States</p>
+                    </div>
+
+                    <p className='mt-5 leading-8 tracking-wide'> Royal Caribbean International has been delivering innovation at sea for more than 50 years. Each successive class of ships presents a new architectural marvel, enhanced with the latest technology and ever more exciting guest experiences for today’s adventurous traveler. The cruise line sails 26 ships to more than 270 destinations in 72 countries on six continents, including the Royal Caribbean private island in The Bahamas, Perfect Day at CocoCay. Royal Caribbean has also been voted “Best Cruise Line Overall” for 18 consecutive years in the Travel Weekly Readers’ Choice Awards. </p>
+
+                  </div>  
+                </div>}
                   <p className='block'>cruise Line</p>
                   <h1 className='text-xl'>Royal Caribbean International</h1>
 
@@ -956,12 +1053,29 @@ function App() {
                   <p>Promotion(s)</p>
                 </div>
               </div>
+              {/* The cruise 6 details stat here  */}
               <div className='w-96 h-[600px] '>
               <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Cruise6} alt="" />
                 </div>
                   <div className='text-center mt-3 px-10'>
-                    <button className='text-red-500 text-2xl font-semibold'>Dijon to Saint-Léger-Sur-Dheune</button>
+                    <button className='text-red-500 text-2xl font-semibold' onClick={handleCruiseDetails6}>Dijon to Saint-Léger-Sur-Dheune</button>
+                    {showCruise6 && <div className='w-[80rem] border relative -ml-[880px] mt-5'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Cruise6} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64 h-screen'>
+                    <h1 className='pt-5 text-6xl font-serif'>Royal Caribbean International</h1>
+                    <h2 className='mt-3 text-4xl font-semibold'>Miami, FL United States</h2>
+                    <div className='m-auto w-32 mt-8'>
+                      <p>Address</p>
+                      <p>1080 Caribbean Way Miami, Florida 33132 United States</p>
+                    </div>
+
+                    <p className='mt-5 leading-8 tracking-wide'> Royal Caribbean International has been delivering innovation at sea for more than 50 years. Each successive class of ships presents a new architectural marvel, enhanced with the latest technology and ever more exciting guest experiences for today’s adventurous traveler. The cruise line sails 26 ships to more than 270 destinations in 72 countries on six continents, including the Royal Caribbean private island in The Bahamas, Perfect Day at CocoCay. Royal Caribbean has also been voted “Best Cruise Line Overall” for 18 consecutive years in the Travel Weekly Readers’ Choice Awards. </p>
+
+                  </div>  
+                </div>}
                   <p>cruise Line</p>
                   <h1 className='text-xl'>Royal Caribbean International</h1>
 
@@ -973,6 +1087,7 @@ function App() {
                   <p>Promotion(s)</p>
                 </div>
               </div>
+              {/* The cruise 6 details end here  */}
             </div>
           </div>
 
@@ -982,8 +1097,42 @@ function App() {
           </div>
 
            {/* { The start of ABOUT US} */}
-           <div className='' id='about-us'>
-            This is about us page
+           <div className='mt-10' id='abou-us'>
+            <div className='mt-4 text-4xl font-bold font-serif w-200 text-center m-auto mb-6'>
+              <h1 className='capitalize'>About Travel Experts</h1>
+            </div>
+            <p className='mt-5 text-lg'> 
+              Travel Experts has been a premier travel design firm since 1989, made up of only the industry’s premium travel counselors. Travel Experts members are experienced professionals who operate as independent contractors, fully embracing the entrepreneurial spirit of their individual businesses. They have the travel expertise and business acumen needed to enable them to work independently while at the same time enjoying the advantages of associating with a nationally recognized premier agency.
+              What this means to you, the traveler is the best possible service and attention because it is in their best interest to orchestrate an amazing trip for you. Through our membership in Virtuoso, an invitation only network of the world's best travel agencies, we can offer you our personal relationships with the top hotels, resorts, spas, lodges, airline, cruise lines and tour companies to provide you with incredible values and rare experiences - from complimentary upgrades and amenities to special recognition and privileged access.
+              As you browse through our travel consultants, you will note an extensive variety of specialists who can satisfy all types of travel needs including vacation planning, family adventure, group and incentive travel, religious travel and corporate travel management. We invite you to search out the specialist that will create the perfect trip.
+            </p>
+          </div>
+
+          <div className='w-3/4 mx-auto mt-5 text-center'>
+            <h1 className='mt-5 capitalize text-4xl font-semibold'>Our Management Team</h1>
+            <h2 className='mt-5 text-2xl'>TravelExpert Team</h2>
+            <div className='grid grid-cols-4 gap-3 items-center p-3 mt-5'>
+              <div className=' w-48 h-48 p-2'>
+                <h1 className='text-xl font-bold mt-3'>Susan Ferrell</h1>
+                <p className='mt-4 '>President & Owner</p>
+                <a href="/" className='text-red-400 mt-5'>Email Susan</a>
+              </div>
+              <div className=' w-48 h-48 p-2'>
+                <h1 className='text-xl font-bold mt-3'>Sharon Fake</h1>
+                <p className='mt-4 '>Executive Director</p>
+                <a href="/" className='text-red-400 mt-5'>Email Sharon</a>
+              </div>
+              <div className=' w-48 h-48 p-2'>
+                <h1 className='text-xl font-bold mt-3'>Claire Canady</h1>
+                <p className='mt-4 '>Director, NC Operations</p>
+                <a href="/" className='text-red-400 mt-5'>Email Claire</a>
+              </div>
+              <div className=' w-48 h-48 p-2'>
+               <h1 className='text-xl font-bold t-3'>Heather McIntyre</h1>
+                <p className='mt-4 '>Director, Technology & Finance</p>
+                <a href="/" className='text-red-400 mt-5'>Email Heather</a>
+              </div>
+            </div>
           </div>
           
         <footer className='mt-5 w-full h-16 text-center'>
