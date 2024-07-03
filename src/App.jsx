@@ -1092,8 +1092,139 @@ function App() {
           </div>
 
            {/* { The start of TOUR} */}
-           <div className='' id='tour'>
-            This is the tour page
+           <div className='mt-20' id='tour'>
+            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6'>
+              <h1 className='uppercase'>Tour</h1>
+              <p className='capitalize'>Find your tour</p>
+            </div>
+
+            <div className='grid grid-cols-3 gap-3'>
+              <div className='w-96 h-[600px] '>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10 items-start'>
+                <button className='text-red-500 text-2xl font-semibold' >Licensed to Thrill - Family</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Taupo, New Zealand</p>
+                    <p className='mt-4 text-lg'>Offered By The Kinloch Manor & Villas</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 08 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]  bg-slate-50 '>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >Rekindle Your Senses </button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Koh Samui, Thailand</p>
+                    <p className='mt-4 text-lg'>Offered By Six Senses Samui</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 12 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]  bg-slate-50 '>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >FANtastic EURO 2024 (2 nights)</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Munich, Germany</p>
+                    <p className='mt-4 text-lg'>Offered By Mandarin Oriental, Munich</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through:13 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]  bg-slate-50 '>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >VIP NYC Shopping Tour and Pampering Experience</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>New York City, NY United States</p>
+                    <p className='mt-4 text-lg'>Offered By Beyond Times Square</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 15 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]  bg-slate-50 '>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >THAI WELLNESS JOURNEY</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Koh Samui, Thailand</p>
+                    <p className='mt-4 text-lg'>Offered By Anantara Lawana Koh Samui Resort</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 15 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]   bg-slate-50'>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >Luxurious Dubai & Maldives 10 night escape </button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Dubai, United Arab Emirates</p>
+                    <p className='mt-4 text-lg'>Offered By Arabian Adventures</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 19 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]   bg-slate-50'>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >Unveil the Perfect Paradise -Dubai and the Maldives</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Male, Maldives</p>
+                    <p className='mt-4 text-lg'>Offered By Arabian Adventures</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 19 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]   bg-slate-50'>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >Discover the wonders of Oman - 7 days 6 nights</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Muscat, Oman</p>
+                    <p className='mt-4 text-lg'>Offered By Arabian Adventures</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 19 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className='w-96 h-[600px]  bg-slate-50'>
+                <div className='w-full h-1/2'>
+                  <img className='w-full h-full' src='' alt="tour image" />
+                </div>
+                <div className='text-center mt-3 px-10'>
+                <button className='text-red-500 text-2xl font-semibold' >Charleston History Multiday Experience</button>
+                  <div className='w-3/4 m-auto'>
+                    <p className='mt-4 text-2xl space-x-2'>Charleston, SC United States</p>
+                    <p className='mt-4 text-lg'>Offered By Beyond Times Square</p>
+                    <p className='mt-4 text-xl'>Valid for Travel Now Through: 24 Jul 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
            {/* { The start of ABOUT US} */}
