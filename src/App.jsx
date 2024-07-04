@@ -18,6 +18,15 @@ import Cruise3 from './assets/cruise3.jpeg'
 import Cruise4 from './assets/cruise4.jpeg'
 import Cruise5 from './assets/cruise5.jpeg'
 import Cruise6 from './assets/cruise6.jpeg'
+import Tour1 from './assets/Tour1.jpg'
+import Tour2 from './assets/Tour2.jpg'
+import Tour3 from './assets/Tour3.jpg'
+import Tour4 from './assets/Tour4.jpg'
+import Tour5 from './assets/Tour5.jpg'
+import Tour6 from './assets/Tour6.jpg'
+import Tour7 from './assets/Tour7.jpg'
+import Tour8 from './assets/Tour8.jpg'
+import Tour9 from './assets/Tour9.jpg'
 import { useState } from 'react'
 // import LogoText from './assets/travel.svg'
 
@@ -1099,9 +1108,9 @@ function App() {
             </div>
 
             <div className='grid grid-cols-3 gap-3'>
-              <div className='w-96 h-[600px] '>
+              <div className='w-96 h-[600px] bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour2} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10 items-start'>
                 <button className='text-red-500 text-2xl font-semibold' >Licensed to Thrill - Family</button>
@@ -1115,7 +1124,7 @@ function App() {
 
               <div className='w-96 h-[600px]  bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour1} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >Rekindle Your Senses </button>
@@ -1129,7 +1138,7 @@ function App() {
 
               <div className='w-96 h-[600px]  bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour3} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >FANtastic EURO 2024 (2 nights)</button>
@@ -1143,7 +1152,7 @@ function App() {
 
               <div className='w-96 h-[600px]  bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour4} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >VIP NYC Shopping Tour and Pampering Experience</button>
@@ -1157,7 +1166,7 @@ function App() {
 
               <div className='w-96 h-[600px]  bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour5} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >THAI WELLNESS JOURNEY</button>
@@ -1171,7 +1180,7 @@ function App() {
 
               <div className='w-96 h-[600px]   bg-slate-50'>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour6} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >Luxurious Dubai & Maldives 10 night escape </button>
@@ -1185,7 +1194,7 @@ function App() {
 
               <div className='w-96 h-[600px]   bg-slate-50'>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour7} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >Unveil the Perfect Paradise -Dubai and the Maldives</button>
@@ -1199,7 +1208,7 @@ function App() {
 
               <div className='w-96 h-[600px]   bg-slate-50'>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour8} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >Discover the wonders of Oman - 7 days 6 nights</button>
@@ -1213,7 +1222,7 @@ function App() {
 
               <div className='w-96 h-[600px]  bg-slate-50'>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src='' alt="tour image" />
+                  <img className='w-full h-full' src={Tour9} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
                 <button className='text-red-500 text-2xl font-semibold' >Charleston History Multiday Experience</button>
@@ -1266,8 +1275,42 @@ function App() {
             </div>
           </div>
           
-        <footer className='mt-5 w-full h-16 text-center'>
-          <p className='text-red-500 text-lg'> &copy; Develop By <strong>Musa Joof</strong>, All Right Reserved 2024</p>
+        <footer className='mt-5 w-full  text-center bg-black rounded-t-3xl'>
+          <div className='flex justify-start items-start pl-4 text-white'>
+            <div className='mt-5 border-2 rounded-lg p-2 '>
+              <p className='text-lg font-semibold font-serif'>Contact Information</p>
+              <div className='space-x-3'>
+                <label className=' ' htmlFor="address">ADDRESS:</label>
+                <strong>Busura, Kombo Central</strong>
+              </div>
+              <div className='space-x-3 mt-3'>
+                <label className='' htmlFor="tell">TELL:</label>
+                <strong>+2207145920 / +2205847203</strong>
+              </div>
+              <div className='space-x-3 mt-3'>
+                <label className='' htmlFor="email">EMAIL:</label>
+                <strong>musajoof447@gmail.com</strong>
+              </div>
+            </div>
+            <p className='text-white text-lg p-4 '> &copy; Develop By <strong>Musa Joof</strong>, All Right Reserved 2024</p>
+          </div>
+
+          <nav className='w-3/4 m-auto mt-3 mb-8 text-white'>
+            <ul className='flex justify-between items-center m-auto text-2xl font-bold'>
+              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
+                <a href="#hotel">Hotel</a>
+              </li>
+              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
+                <a href="#cruise">Cruise</a>
+              </li>
+              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
+                <a href="#tour">Tour</a>
+              </li>
+              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
+                <a href="#abou-us">About Us</a>
+              </li>
+            </ul>
+          </nav>
         </footer>
       </div>
     </>
