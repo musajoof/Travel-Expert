@@ -71,6 +71,15 @@ function App() {
   const [showCruise4, setShowCruise4] = useState(false);
   const [showCruise5, setShowCruise5] = useState(false);
   const [showCruise6, setShowCruise6] = useState(false);
+  const [showTour1, setShowTou1] = useState(false);
+  const [showTour2, setShowTou2] = useState(false);
+  const [showTour3, setShowTou3] = useState(false);
+  const [showTour4, setShowTou4] = useState(false);
+  const [showTour5, setShowTou5] = useState(false);
+  const [showTour6, setShowTou6] = useState(false);
+  const [showTour7, setShowTou7] = useState(false);
+  const [showTour8, setShowTou8] = useState(false);
+  const [showTour9, setShowTou9] = useState(false);
 
   const handleMoreDetails1 = () => {
     setShowHotel1(!showHotel1);
@@ -136,20 +145,51 @@ function App() {
     setShowCruise1(!showCruise1); // Toggle the showCruise1 state
   };
   const handleCruiseDetails2 = () => {
-    setShowCruise2(!showCruise2); // Toggle the showCruise1 state
+    setShowCruise2(!showCruise2); // Toggle the showCruise2 state
   };
   const handleCruiseDetails3 = () => {
-    setShowCruise3(!showCruise3); // Toggle the showCruise1 state
+    setShowCruise3(!showCruise3); // Toggle the showCruise3 state
   };
   const handleCruiseDetails4 = () => {
-    setShowCruise4(!showCruise4); // Toggle the showCruise1 state
+    setShowCruise4(!showCruise4); // Toggle the showCruise14 state
   };
   const handleCruiseDetails5 = () => {
-    setShowCruise5(!showCruise5); // Toggle the showCruise1 state
+    setShowCruise5(!showCruise5); // Toggle the showCruise5 state
   };
   const handleCruiseDetails6 = () => {
-    setShowCruise6(!showCruise6); // Toggle the showCruise1 state
+    setShowCruise6(!showCruise6); // Toggle the showCruise6 state
   };
+
+
+  const handleTourDetails1 = () => {
+    setShowTou1(!showTour1); // Toggle the showTour1 state
+  };
+  const handleTourDetails2 = () => {
+    setShowTou2(!showTour2); // Toggle the showTour2 state
+  };
+  const handleTourDetails3 = () => {
+    setShowTou3(!showTour3); // Toggle the showTour3 state
+  };
+  const handleTourDetails4 = () => {
+    setShowTou4(!showTour4); // Toggle the showTour4 state
+  };
+  const handleTourDetails5 = () => {
+    setShowTou5(!showTour5); // Toggle the showTour5 state
+  };
+  const handleTourDetails6 = () => {
+    setShowTou6(!showTour6); // Toggle the showTour6 state
+  };
+  const handleTourDetails7 = () => {
+    setShowTou7(!showTour7); // Toggle the showTour7 state
+  };
+  const handleTourDetails8 = () => {
+    setShowTou8(!showTour8); // Toggle the showTour8 state
+  };
+  const handleTourDetails9 = () => {
+    setShowTou9(!showTour9); // Toggle the showTour9 state
+  };
+
+
  
   return (
     <>
@@ -1110,10 +1150,50 @@ function App() {
             <div className='grid grid-cols-3 gap-3'>
               <div className='w-96 h-[600px] bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src={Tour2} alt="tour image" />
+                  <img className='w-full h-full' src={Tour1} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10 items-start'>
-                <button className='text-red-500 text-2xl font-semibold' >Licensed to Thrill - Family</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails1}>Licensed to Thrill - Family</button>
+
+                  {/* {The starting of this Tour1 details} */}
+                {showTour1 && <div className='w-[80rem] border relative -ml-10'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour1} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>The Kinloch Manor & Villas</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Taupo, New Zealand</h2>
+                    <p>Address</p>
+                    <p>261 Kinloch Road</p>
+                    <p>New Zealand</p>
+
+                    <p>When you stay at The Kinloch Manor & Villas, one thing’s for sure: You’re in for a wild time. It’s all about nature at this 18-room uberluxe lodge, set within the grounds of The Kinloch Club golf course on Lake Taupo (New Zealand’s largest lake). You can go sailing and white-water rafting, cast a line for some of the world’s best trout fishing, tramp to geothermal pools in UNESCO-designated Tongariro National Park, and tackle Jack Nicklaus’ only signature golf course in the country. Return for a manuka honey spa treatment and estate-to-plate cuisine prepared with delicious artistry.</p>
+
+                    <p className='pt-5 text-4xl font-semibold'>Virtuoso Amenities for your stay:</p>
+
+                    <h2 className='mt-3 text-2xl font-semibold text-start'>For 2024:</h2>
+                    <p>
+                      <ul className=' pl-3'>
+                        <li>Upgrade on arrival, subject to availability</li>
+                        <li>Daily breakfast credit of $25 per person, for up to two guests per bedroom, applicable in Neighbors Café (credit is non-cumulative)</li>
+                        <li>$100 USD Food & Beverage credit, once during stay, applicable in The Osprey Restaurant and in Harriet’s Lounge on the 10th floor (not combinable, not valid on room rate, no cash value if not redeemed in full)</li>
+                        <li>Early Check-In / Late Check-Out, subject to availability</li>
+                        <li>Complimentary Wi-Fi</li>
+                      </ul>
+                    </p>
+
+                    <div className='px-40'>
+                      <h1 className='pt-5 text-4xl font-semibold'>At the Hotel</h1>
+                      <h2 className='mt-3 text-2xl font-semibold '>Features</h2>
+                      <p>Banquet Facilities, Conference Facilities, Culinary Program, Internet Access, Lounge/Bar, Restaurant, Villas</p>
+
+                      <h2 className='mt-3 text-2xl font-semibold '>Recreation</h2>
+                      <p>Golf, Water Sports</p>
+                    </div>
+                  </div>  
+                </div>}
+                {/* End of Tour1 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Taupo, New Zealand</p>
                     <p className='mt-4 text-lg'>Offered By The Kinloch Manor & Villas</p>
@@ -1124,10 +1204,54 @@ function App() {
 
               <div className='w-96 h-[600px]  bg-slate-50 '>
                 <div className='w-full h-1/2'>
-                  <img className='w-full h-full' src={Tour1} alt="tour image" />
+                  <img className='w-full h-full' src={Tour2} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >Rekindle Your Senses </button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails2}>Rekindle Your Senses </button>
+
+                {/* {The starting of this Tour2 details} */}
+                {showTour2 && <div className='w-[80rem] border relative -ml-[476px]'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour2} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Six Senses Samui</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Koh Samui, Thailand</h2>
+                    <p>Address</p>
+                    <p>9/10 Moo 5, Baan Plai Laem Bophut</p>
+                    <p>Koh Samui, 84320 Thailand</p>
+
+                    <p>Utterly and unabashedly romantic, Six Senses Samui is the most delightful daydream come true. Be it yoga at sunrise, deeply relaxing spa treatments (often designed for two), soaking in the sun, the azure view from your pool villa, or day trips discovering the many delights of the island, it’s all magical. And as for the nights, enjoy sunset cocktails, dinner under a velvet sky studded with twinkling stars, world-class food and wine... it’s moments like these that you will treasure forever.</p>
+
+                    <p className='pt-5 text-4xl font-semibold'>Virtuoso Amenities for your stay:</p>
+
+                    <h2 className='mt-3 text-2xl font-semibold text-start'>For 2024:</h2>
+                    <p>
+                      <ul className=' pl-3'>
+                        <li>Upgrade on arrival, subject to availability</li>
+                        <li>Daily breakfast credit of $25 per person, for up to two guests per bedroom, applicable in Neighbors Café (credit is non-cumulative)</li>
+                        <li>$100 USD Food & Beverage credit, once during stay, applicable in The Osprey Restaurant and in Harriet’s Lounge on the 10th floor (not combinable, not valid on room rate, no cash value if not redeemed in full)</li>
+                        <li>Early Check-In / Late Check-Out, subject to availability</li>
+                        <li>Complimentary Wi-Fi</li>
+                      </ul>
+                    </p>
+
+                    <div className='px-40'>
+                      <h1 className='pt-5 text-4xl font-semibold'>At the Hotel</h1>
+                      <h2 className='mt-3 text-2xl font-semibold '>Features</h2>
+                      <p>Air Conditioning, Children's Programs, Complimentary Parking, Culinary Program, Internet Access, Meal Plans Available, Multi-lingual Staff, Restaurant, Villas</p>
+
+                      <h2 className='mt-3 text-2xl font-semibold '>Service</h2>
+                      <p>Babysitting Services, Laundry/Dry Cleaning/Pressing, Limousine Service, Room Service 24-hours, Turndown Service, Wakeup Calls, Wedding Services</p>
+                      <h2 className='mt-3 text-2xl font-semibold '>Recreation</h2>
+                      <p>Golf, Water Sports</p>
+                      <h2 className='mt-3 text-2xl font-semibold '>In Your Room</h2>
+                      <p>Bathrobes, Butler Service, Complimentary Coffee/Tea, Iron/Ironing Board, Mini Bar</p>
+                    </div>
+                  </div>  
+                </div>}
+                {/* End of Tour2 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Koh Samui, Thailand</p>
                     <p className='mt-4 text-lg'>Offered By Six Senses Samui</p>
@@ -1141,7 +1265,53 @@ function App() {
                   <img className='w-full h-full' src={Tour3} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >FANtastic EURO 2024 (2 nights)</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails3}>FANtastic EURO 2024 (2 nights)</button>
+
+                {/* {The starting of this Tour3 details} */}
+                {showTour3 && <div className='w-[80rem] border relative -ml-[880px]'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour3} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Mandarin Oriental, Munich</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Munich, Germany</h2>
+                    <p className='mt-5'>Neighborhood</p>
+                    <p className='mb-5'>Munich city center.</p>
+                    <p>Address</p>
+                    <p>Neuturmstrasse 1 Munich, 80331 </p>
+                    <p>Germany</p>
+
+                    <p>Set on a quiet street off the renowned Maximilianstrasse, Mandarin Oriental, Munich is praised for its historic setting and proximity to popular sights. This award-winning hotel redefines luxury as the only hotel in Germany with a Forbes Five Star award, voted among the top ten in Travel + Leisure's 100 World's Best Hotels. Beyond the exclusive location, one of the hotel's highlights is the roof terrace with a unique view over Munich toward the Alps. A culinary highlight at the hotel is Matsuhisa Munich, the first restaurant by Nobu Matsuhisa in Germany.</p>
+
+                    <p className='pt-5 text-4xl font-semibold'>Virtuoso Amenities for your stay:</p>
+
+                    <h2 className='mt-3 text-2xl font-semibold text-start'>For 2024:</h2>
+                    <p>
+                      <ul className=' pl-3'>
+                        <li>Upgrade on arrival, subject to availability</li>
+                        <li>Daily breakfast credit of $25 per person, for up to two guests per bedroom, applicable in Neighbors Café (credit is non-cumulative)</li>
+                        <li>$100 USD Food & Beverage credit, once during stay, applicable in The Osprey Restaurant and in Harriet’s Lounge on the 10th floor (not combinable, not valid on room rate, no cash value if not redeemed in full)</li>
+                        <li>Early Check-In / Late Check-Out, subject to availability</li>
+                        <li>Complimentary Wi-Fi</li>
+                      </ul>
+                    </p>
+
+                    <div className='px-40'>
+                      <h1 className='pt-5 text-4xl font-semibold'>At the Hotel</h1>
+                      <h2 className='mt-3 text-2xl font-semibold '>Features</h2>
+                      <p>Banquet Facilities, Conference Facilities, Culinary Program, Internet Access, Lounge/Bar, Restaurant, Villas</p>
+
+                      <h2 className='mt-3 text-2xl font-semibold '>Service</h2>
+                      <p>Babysitting Services, Concierge Desk, House Safe, Housekeeping -- Twice Daily, Laundry/Dry Cleaning/Pressing, Limousine Service, Room Service, Room Service 24-hours, Salon, Shoeshine Service, Turndown Service, Valet Parking, Wakeup Calls, Wedding Services</p>
+                      <h2 className='mt-3 text-2xl font-semibold '>Recreation</h2>
+                      <p>Bicycle Rental, Fitness Center, Pool, Sauna</p>
+                      <h2 className='mt-3 text-2xl font-semibold '>In Your Room</h2>
+                      <p>Bathrobes, Butler Service, Complimentary Coffee/Tea, Complimentary Newspaper, Hair Dryer, Iron/Ironing Board, Mini Bar, Safe, Slippers</p>
+                    </div>
+                  </div>  
+                </div>}
+                {/* End of Tour3 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Munich, Germany</p>
                     <p className='mt-4 text-lg'>Offered By Mandarin Oriental, Munich</p>
@@ -1155,7 +1325,34 @@ function App() {
                   <img className='w-full h-full' src={Tour4} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >VIP NYC Shopping Tour and Pampering Experience</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails4}>VIP NYC Shopping Tour and Pampering Experience</button>
+
+                {/* {The starting of this Tour4 details} */}
+                {showTour4 && <div className='w-[80rem] border relative -ml-16'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour4} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Beyond Times Square</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>New York City, NY United States</h2>
+                    <p>Address</p>
+                    <p>300 Park Avenue 2nd Floor</p>
+                    <p>New York City, New York 10022 United States</p>
+
+                    <p>Beyond Times Square is a New York City-based destination management company with a 19-year history of delivering tailormade, luxury travel programs with authentic local experiences. With its exceptional expertise and extensive network of specialists, local experts, and high-quality vendors in the travel industry, Beyond Times Square offers supreme hospitality to both individual and group travelers in New York City, Washington D.C., Boston, Philadelphia, Niagara Falls, and surrounding areas. For further information, please visit www.btsq.com.</p>
+
+                    <div className='px-40'>
+                      <h1 className='pt-5 text-4xl font-semibold'>At the Hotel</h1>
+                      <h2 className='mt-3 text-2xl font-semibold '>Features</h2>
+                      <p>Banquet Facilities, Conference Facilities, Culinary Program, Internet Access, Lounge/Bar, Restaurant, Villas</p>
+
+                      <h2 className='mt-3 text-2xl font-semibold '>Recreation</h2>
+                      <p>Golf, Water Sports</p>
+                    </div>
+                  </div>  
+                </div>}
+                {/* End of Tour4 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>New York City, NY United States</p>
                     <p className='mt-4 text-lg'>Offered By Beyond Times Square</p>
@@ -1169,7 +1366,51 @@ function App() {
                   <img className='w-full h-full' src={Tour5} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >THAI WELLNESS JOURNEY</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails5}>THAI WELLNESS JOURNEY</button>
+
+                {/* {The starting of this Tour5 details} */}
+                {showTour5 && <div className='w-[80rem] border relative -ml-[476px]'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour5} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Anantara Lawana Koh Samui Resort</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Koh Samui, Thailand</h2>
+                    <p>Address</p>
+                    <p>92/1 Moo 2 Bophut Koh Samui, 84320</p>
+                    <p>Thailand</p>
+
+                    <p>Designed to reflect the island’s history and culture, Anantara Lawana Koh Samui Resort features shop-house-style pool suites and lagoon villas artfully arranged like a peaceful fishing village, local specialties served in the secluded canopy of a 120-year-old jungle, and spa treatments that integrate ancient healing techniques. You’ll also find immersive activities ranging from hands-on culinary programs and SCUBA certification classes to Muay Thai boxing lessons in the resort’s rooftop gym.</p>
+
+                    <p className='pt-5 text-4xl font-semibold'>Virtuoso Amenities for your stay:</p>
+
+                    <h2 className='mt-3 text-2xl font-semibold text-start'>For 2024:</h2>
+                    <p>
+                      <ul className=' pl-3'>
+                        <li>Upgrade on arrival, subject to availability</li>
+                        <li>Daily breakfast credit of $25 per person, for up to two guests per bedroom, applicable in Neighbors Café (credit is non-cumulative)</li>
+                        <li>$100 USD Food & Beverage credit, once during stay, applicable in The Osprey Restaurant and in Harriet’s Lounge on the 10th floor (not combinable, not valid on room rate, no cash value if not redeemed in full)</li>
+                        <li>Early Check-In / Late Check-Out, subject to availability</li>
+                        <li>Complimentary Wi-Fi</li>
+                      </ul>
+                    </p>
+
+                    <div className='px-40'>
+                      <h1 className='pt-5 text-4xl font-semibold'>At the Hotel</h1>
+                      <h2 className='mt-3 text-2xl font-semibold '>Features</h2>
+                      <p>Banquet Facilities, Conference Facilities, Culinary Program, Internet Access, Lounge/Bar, Restaurant, Villas</p>
+
+                      <h2 className='mt-3 text-2xl font-semibold '>Service</h2>
+                      <p>Babysitting Services, Concierge Desk, Currency Exchange, Laundry/Dry Cleaning/Pressing, Room Service, Room Service 24-hours, Turndown Service, Wedding Services</p>
+                      <h2 className='mt-3 text-2xl font-semibold '>Recreation</h2>
+                      <p>Golf, Water Sports</p>
+                      <h2 className='mt-3 text-2xl font-semibold '>In Your Room</h2>
+                      <p>Bathrobes, Complimentary Coffee/Tea, Hair Dryer, Iron/Ironing Board, Mini Bar, Safe, Slippers</p>
+                    </div>
+                  </div>  
+                </div>}
+                {/* End of Tour5 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Koh Samui, Thailand</p>
                     <p className='mt-4 text-lg'>Offered By Anantara Lawana Koh Samui Resort</p>
@@ -1183,7 +1424,26 @@ function App() {
                   <img className='w-full h-full' src={Tour6} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >Luxurious Dubai & Maldives 10 night escape </button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails6}>Luxurious Dubai & Maldives 10 night escape </button>
+
+                {/* {The starting of this Tour6 details} */}
+                {showTour6 && <div className='w-[80rem] border relative -ml-[880px]'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour6} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Arabian Adventures</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Dubai, United Arab Emirates</h2>
+                    <p>Address</p>
+                    <p>Emirates Holidays Building, 4th Floor Sheikh Zayed Road</p>
+                    <p>New Zealand P.O. Box. 7631 Dubai,</p>
+                    <p>United Arab Emirates</p>
+
+                    <p>Arabian Adventures, headquartered in Dubai, is part of the Destination and Leisure Management division of the Emirates Group. With offices in Dubai, as well as associates across the world, we are the region’s leading destination management company providing services of an exceptional standard, and are perfectly placed to meet all of your requirements. With over 300 professional, multilingual staff, we're equipped to provide a wide range of exclusive tailor-made services - from planning, contracting hotel space, transfers, arrivals and in-resort assistance, to organising excursions and safaris and managing sports trips and events. Our outstanding reputation, both for our creative approach and attention to detail, has made us the first choice for some of the world's most reputed tour operators and travel advisors. Our services operate in the United Arab Emirates (UAE), Oman, Qatar and the Maldives.</p>
+                  </div>  
+                </div>}
+                {/* End of Tour6 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Dubai, United Arab Emirates</p>
                     <p className='mt-4 text-lg'>Offered By Arabian Adventures</p>
@@ -1197,7 +1457,26 @@ function App() {
                   <img className='w-full h-full' src={Tour7} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >Unveil the Perfect Paradise -Dubai and the Maldives</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails7}>Unveil the Perfect Paradise -Dubai and the Maldives</button>
+
+                {/* {The starting of this Tour7 details} */}
+                {showTour7 && <div className='w-[80rem] border relative -ml-10'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour7} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Arabian Adventures</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Dubai, United Arab Emirates</h2>
+                    <p>Address</p>
+                    <p>Emirates Holidays Building, 4th Floor Sheikh Zayed Road P.O. Box. 7631 Dubai,</p>
+                    <p>United Arab Emirates</p>
+
+                    <p>Arabian Adventures, headquartered in Dubai, is part of the Destination and Leisure Management division of the Emirates Group. With offices in Dubai, as well as associates across the world, we are the region’s leading destination management company providing services of an exceptional standard, and are perfectly placed to meet all of your requirements. With over 300 professional, multilingual staff, we're equipped to provide a wide range of exclusive tailor-made services - from planning, contracting hotel space, transfers, arrivals and in-resort assistance, to organising excursions and safaris and managing sports trips and events. Our outstanding reputation, both for our creative approach and attention to detail, has made us the first choice for some of the world's most reputed tour operators and travel advisors. Our services operate in the United Arab Emirates (UAE), Oman, Qatar and the Maldives.</p>
+
+                  </div>  
+                </div>}
+                {/* End of Tour7 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Male, Maldives</p>
                     <p className='mt-4 text-lg'>Offered By Arabian Adventures</p>
@@ -1211,7 +1490,26 @@ function App() {
                   <img className='w-full h-full' src={Tour8} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >Discover the wonders of Oman - 7 days 6 nights</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails8}>Discover the wonders of Oman - 7 days 6 nights</button>
+
+                {/* {The starting of this Tour8 details} */}
+                {showTour8 && <div className='w-[80rem] border relative -ml-[490px]'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour8} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Arabian Adventures</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>Dubai, United Arab Emirates</h2>
+                    <p>Address</p>
+                    <p>Emirates Holidays Building, 4th Floor Sheikh Zayed Road P.O. Box. 7631 Dubai,</p>
+                    <p>United Arab Emirates</p>
+
+                    <p>Destination and Leisure Management division of the Emirates Group. With offices in Dubai, as well as associates across the world, we are the region’s leading destination management company providing services of an exceptional standard, and are perfectly placed to meet all of your requirements. With over 300 professional, multilingual staff, we're equipped to provide a wide range of exclusive tailor-made services - from planning, contracting hotel space, transfers, arrivals and in-resort assistance, to organising excursions and safaris and managing sports trips and events. Our outstanding reputation, both for our creative approach and attention to detail, has made us the first choice for some of the world's most reputed tour operators and travel advisors. Our services operate in the United Arab Emirates (UAE), Oman, Qatar and the Maldives.</p>
+
+                  </div>  
+                </div>}
+                {/* End of Tour8 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Muscat, Oman</p>
                     <p className='mt-4 text-lg'>Offered By Arabian Adventures</p>
@@ -1225,7 +1523,26 @@ function App() {
                   <img className='w-full h-full' src={Tour9} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
-                <button className='text-red-500 text-2xl font-semibold' >Charleston History Multiday Experience</button>
+                <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails9}>Charleston History Multiday Experience</button>
+
+                {/* {The starting of this Tour9 details} */}
+                {showTour9 && <div className='w-[80rem] border relative -ml-[880px]'>
+                  <div className='w-full h-2/5'>
+                    <img className='w-full h-full' src={Tour9} alt=""/>
+                  </div>
+                  <div className='bg-slate-100 text-center px-64'>
+                    <h1 className='pt-5 text-4xl font-semibold'>Beyond Times Square</h1>
+                    <h2 className='mt-3 text-2xl font-semibold'>New York City, NY United States</h2>
+                    <p>Address</p>
+                    <p>300 Park Avenue 2nd Floor New York City, New York 10022</p>
+                    <p>United States</p>
+
+                    <p>Beyond Times Square is a New York City-based destination management company with a 19-year history of delivering tailormade, luxury travel programs with authentic local experiences. With its exceptional expertise and extensive network of specialists, local experts, and high-quality vendors in the travel industry, Beyond Times Square offers supreme hospitality to both individual and group travelers in New York City, Washington D.C., Boston, Philadelphia, Niagara Falls, and surrounding areas. For further information, please visit www.btsq.com.</p>
+
+                  </div>  
+                </div>}
+                {/* End of Tour9 detaials */}
+
                   <div className='w-3/4 m-auto'>
                     <p className='mt-4 text-2xl space-x-2'>Charleston, SC United States</p>
                     <p className='mt-4 text-lg'>Offered By Beyond Times Square</p>
