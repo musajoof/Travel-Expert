@@ -28,6 +28,7 @@ import Tour7 from './assets/Tour7.jpg'
 import Tour8 from './assets/Tour8.jpg'
 import Tour9 from './assets/Tour9.jpg'
 import { useState } from 'react'
+import LoginForm from './Component/LoginForm';
 // import LogoText from './assets/travel.svg'
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -189,10 +190,17 @@ function App() {
     setShowTou9(!showTour9); // Toggle the showTour9 state
   };
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLoginSuccess = () => {
+    setLoggedIn(true);  // Set to true once login is successful
+  };
 
  
   return (
     <>
+    <LoginForm />
+      {loggedIn ? (
       <div className="text-slate-800 max-w-7xl max-h-full p-4 mx-auto ">
         <header className="bg-white text-red-500 ">
           <div className="w-3/4 h-36 m-auto flex justify-center items-center gap-2 text-7xl font-tin font-serif">
@@ -1630,6 +1638,10 @@ function App() {
           </nav>
         </footer>
       </div>
+       ) : (
+        <LoginForm onLoginSuccess={handleLoginSuccess} />
+      )}
+
     </>
   )
 }
