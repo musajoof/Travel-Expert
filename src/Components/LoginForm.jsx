@@ -14,10 +14,10 @@ const LoginForm = ({ onLoginSuccess }) => {
       return;
     }
 
-    // Mock login logic (replace this with actual authentication call)
+    // Mock login logic - replace this with actual authentication
     if (username === 'admin' && password === 'password') {
       setError('');
-      if (onLoginSuccess) onLoginSuccess();  // Check if onLoginSuccess exists, then call it
+      onLoginSuccess();  // Call the onLoginSuccess function to update loggedIn state
     } else {
       setError('Invalid username or password');
     }

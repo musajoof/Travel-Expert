@@ -28,8 +28,9 @@ import Tour7 from './assets/Tour7.jpg'
 import Tour8 from './assets/Tour8.jpg'
 import Tour9 from './assets/Tour9.jpg'
 import { useState } from 'react'
-import LoginForm from './Component/LoginForm';
-// import LogoText from './assets/travel.svg'
+import LoginForm from './Components/LoginForm';
+import SearchBar from './Components/SearchBar';
+import { searchItems } from './Components/SearchService';
 
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
@@ -81,6 +82,7 @@ function App() {
   const [showTour7, setShowTou7] = useState(false);
   const [showTour8, setShowTou8] = useState(false);
   const [showTour9, setShowTou9] = useState(false);
+
 
   const handleMoreDetails1 = () => {
     setShowHotel1(!showHotel1);
@@ -191,18 +193,23 @@ function App() {
   };
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleLoginSuccess = () => {
     setLoggedIn(true);  // Set to true once login is successful
   };
 
+  const handleSearch = (query, category) => {
+    console.log(`Searching for ${query} in ${category}`);
+    const results = searchItems(query, category);
+    setSearchResults(results);
+  };
  
   return (
     <>
-    <LoginForm />
       {loggedIn ? (
       <div className="text-slate-800 max-w-7xl max-h-full p-4 mx-auto ">
-        <header className="bg-white text-red-500 ">
+        <header className="bg-white text-red-500 mb-3">
           <div className="w-3/4 h-36 m-auto flex justify-center items-center gap-2 text-7xl font-tin font-serif">
             <img className='w-36' src={Logo} alt="" />
             <h1>Travel Expert</h1>
@@ -224,6 +231,26 @@ function App() {
             </ul>
           </nav>
         </header>
+
+        <SearchBar onSearch={handleSearch} />
+
+        {/* Display search results */}
+        <div className="mt-6">
+            <h2 className="text-xl font-semibold">Search Results:</h2>
+            <ul>
+              {searchResults.length > 0 ? (
+                searchResults.map((result) => (
+                  <li key={result.id} className="border-b py-2">
+                    <h3 className="text-lg font-bold">{result.name}</h3>
+                    <p>{result.location}</p>
+                  </li>
+                ))
+              ) : (
+                <p>No results found.</p>
+              )}
+            </ul>
+          </div>
+
         <main className="w-full h-screen  mt-8 bg-[url('./assets/sea.jpg')] bg-no-repeat bg bg-cover ">
           <div className='text-center px-14 '>
             <h1 className='text-white text-7xl font-bold mt-10 pt-44'>Independent travel advisors, working for you</h1>
