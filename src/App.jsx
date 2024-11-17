@@ -28,6 +28,7 @@ import Tour7 from './assets/Tour7.jpg'
 import Tour8 from './assets/Tour8.jpg'
 import Tour9 from './assets/Tour9.jpg'
 import { useState } from 'react'
+import SignupForm from './Components/SignupForm';
 import LoginForm from './Components/LoginForm';
 import SearchBar from './Components/SearchBar';
 import { searchItems } from './Components/SearchService';
@@ -192,6 +193,13 @@ function App() {
     setShowTou9(!showTour9); // Toggle the showTour9 state
   };
 
+  const [showSignup, setShowSignup] = useState(false);
+
+  const handleSignupSuccess = () => {
+    alert('Signup successful! You can now log in.');
+    setShowSignup(false); // Show login form after successful signup
+  };
+
   const [loggedIn, setLoggedIn] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -207,32 +215,49 @@ function App() {
  
   return (
     <>
-      {loggedIn ? (
-      <div className="text-slate-800 max-w-7xl max-h-full p-4 mx-auto ">
-        <header className="bg-white text-red-500 mb-3">
-          <div className="w-3/4 h-36 m-auto flex justify-center items-center gap-2 text-7xl font-tin font-serif">
-            <img className='w-36' src={Logo} alt="" />
-            <h1>Travel Expert</h1>
+    {!loggedIn ? (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+          {showSignup ? (
+            <SignupForm onSignupSuccess={handleSignupSuccess} />
+          ) : (
+            <LoginForm onLoginSuccess={handleLoginSuccess} />
+          )}
+          <div className="text-center mt-4">
+            <button
+              onClick={() => setShowSignup(!showSignup)}
+              className="text-indigo-600 hover:underline"
+            >
+              {showSignup ? 'Already have an account? Login' : "Don't have an account? Signup"}
+            </button>
           </div>
-          <nav className='w-3/4 h-7 m-auto mt-3  bg-white'>
-            <ul className='flex justify-between items-center m-auto text-3xl font-bold'>
-              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
-                <a href="#hotel">Hotel</a>
-              </li>
-              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
-                <a href="#cruise">Cruise</a>
-              </li>
-              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
-                <a href="#tour">Tour</a>
-              </li>
-              <li className='cursor-pointer hover:text-slate-600 hover:translate-y-1'> 
-                <a href="#abou-us">About Us</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        </div>
+      ) : (
+        <div className="text-slate-800 max-w-7xl max-h-full p-4 mx-auto">
+          <header className="bg-white text-red-500 mb-3">
+            <div className="w-3/4 h-36 m-auto flex justify-center items-center gap-2 text-7xl font-tin font-serif">
+              <img className="w-36" src={Logo} alt="Logo" />
+              <h1>Travel Expert</h1>
+            </div>
+            <nav className="w-3/4 h-7 m-auto mt-3 bg-white">
+              <ul className="flex justify-between items-center m-auto text-3xl font-bold">
+                <li className="cursor-pointer hover:text-slate-600 hover:translate-y-1">
+                  <a href="#hotel">Hotel</a>
+                </li>
+                <li className="cursor-pointer hover:text-slate-600 hover:translate-y-1">
+                  <a href="#cruise">Cruise</a>
+                </li>
+                <li className="cursor-pointer hover:text-slate-600 hover:translate-y-1">
+                  <a href="#tour">Tour</a>
+                </li>
+                <li className="cursor-pointer hover:text-slate-600 hover:translate-y-1">
+                  <a href="#about-us">About Us</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
-        <SearchBar onSearch={handleSearch} />
+          {/* Search Bar Component */}
+          <SearchBar onSearch={handleSearch} />
 
         {/* Display search results */}
         <div className="mt-6">
@@ -1663,14 +1688,11 @@ function App() {
               </li>
             </ul>
           </nav>
-        </footer>
-      </div>
-       ) : (
-        <LoginForm onLoginSuccess={handleLoginSuccess} />
+          </footer>
+        </div>
       )}
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
