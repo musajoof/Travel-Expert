@@ -10,7 +10,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex items-center justify-center p-4 bg-gray-200">
+    <div className="flex items-center justify-center p-4 bg-gray-200 dark:bg-gray-900 dark:text-gray-100">
       <form onSubmit={handleSearch} className="flex items-center gap-4">
         <input
           type="text"
@@ -22,9 +22,9 @@ const SearchBar = ({ onSearch }) => {
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="px-4 py-2 border rounded-md focus:outline-none"
+          className="px-4 py-2 border rounded-md focus:outline-none text-slate-300"
         >
-          <option value="Hotels">Hotels</option>
+          <option value="Hotels" className=''>Hotels</option>
           <option value="Cruises">Cruises</option>
           <option value="Tours">Tours</option>
         </select>

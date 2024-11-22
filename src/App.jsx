@@ -27,11 +27,14 @@ import Tour6 from './assets/Tour6.jpg'
 import Tour7 from './assets/Tour7.jpg'
 import Tour8 from './assets/Tour8.jpg'
 import Tour9 from './assets/Tour9.jpg'
+import SunLight from './assets/SunLight.svg'
+import SunDark from './assets/SunDark.svg'
 import { useState } from 'react'
 import SignupForm from './Components/SignupForm';
 import LoginForm from './Components/LoginForm';
 import SearchBar from './Components/SearchBar';
 import { searchItems } from './Components/SearchService';
+import './index.css';
 
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
@@ -83,6 +86,7 @@ function App() {
   const [showTour7, setShowTou7] = useState(false);
   const [showTour8, setShowTou8] = useState(false);
   const [showTour9, setShowTou9] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);  // State for light/dark mode
 
 
   const handleMoreDetails1 = () => {
@@ -212,11 +216,17 @@ function App() {
     const results = searchItems(query, category);
     setSearchResults(results);
   };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    console.log('Dark Mode:', !darkMode); // Debug state change
+  };
  
   return (
     <>
-    {!loggedIn ? (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <div className={darkMode ? 'dark' : ''}> {/* Apply dark mode class */}
+      {!loggedIn ? (
+        <div className="flex flex-col items-center dark:bg-gray-900 dark:text-gray-100 justify-center min-h-screen bg-gray-100">
           {showSignup ? (
             <SignupForm onSignupSuccess={handleSignupSuccess} />
           ) : (
@@ -225,7 +235,7 @@ function App() {
           <div className="text-center mt-4">
             <button
               onClick={() => setShowSignup(!showSignup)}
-              className="text-indigo-600 hover:underline"
+              className="text-indigo-600 dark:text-indigo-300 hover:underline"
             >
               {showSignup ? 'Already have an account? Login' : "Don't have an account? Signup"}
             </button>
@@ -233,12 +243,24 @@ function App() {
         </div>
       ) : (
         <div className="text-slate-800 max-w-7xl max-h-full p-4 mx-auto">
-          <header className="bg-white text-red-500 mb-3">
-            <div className="w-3/4 h-36 m-auto flex justify-center items-center gap-2 text-7xl font-tin font-serif">
-              <img className="w-36" src={Logo} alt="Logo" />
-              <h1>Travel Expert</h1>
+          <header className="bg-white text-red-500 mb-3 dark:bg-gray-900 dark:text-gray-100">
+            <div className='flex justify-start items-center'>
+              <div className="w-3/4 h-36 m-auto flex justify-center items-center gap-2 text-7xl font-tin font-serif">
+                <img className="w-36 " src={Logo} alt="Logo" />
+                <h1>Travel Expert</h1>
+              </div>
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded focus:outline-none"
+              >
+                <img
+                  src={darkMode ? SunLight : SunDark}
+                  alt={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                  className="w-6 h-6 bg-red-200 p-1 rounded-xl text-center"
+                />
+              </button>
             </div>
-            <nav className="w-3/4 h-7 m-auto mt-3 bg-white">
+            <nav className="w-3/4 h-7 m-auto mt-3 bg-white dark:bg-gray-900 dark:text-gray-100">
               <ul className="flex justify-between items-center m-auto text-3xl font-bold">
                 <li className="cursor-pointer hover:text-slate-600 hover:translate-y-1">
                   <a href="#hotel">Hotel</a>
@@ -260,7 +282,7 @@ function App() {
           <SearchBar onSearch={handleSearch} />
 
         {/* Display search results */}
-        <div className="mt-6">
+        <div className="mt-6 dark:bg-gray-900 dark:text-gray-100">
             <h2 className="text-xl font-semibold">Search Results:</h2>
             <ul>
               {searchResults.length > 0 ? (
@@ -276,8 +298,8 @@ function App() {
             </ul>
           </div>
 
-        <main className="w-full h-screen  mt-8 bg-[url('./assets/sea.jpg')] bg-no-repeat bg bg-cover ">
-          <div className='text-center px-14 '>
+        <main className="w-full h-screen  mt-8 bg-[url('./assets/sea.jpg')] bg-no-repeat bg bg-cover dark:bg-gray-900 dark:text-gray-100">
+          <div className='text-center px-14 dark:bg-gray-900 dark:text-gray-100'>
             <h1 className='text-white text-7xl font-bold mt-10 pt-44'>Independent travel advisors, working for you</h1>
             <p className='text-white text-4xl font-bold p-10'>Worry-Free, Expert Planning Unforgettable Luxury Experiences
             VIP access to the World’s Best Hotels, Tours, and Cruises
@@ -289,12 +311,12 @@ function App() {
         </main>
 
           {/* { The start of hotel} */}
-          <div className=' mt-5' id='hotel'>
-            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6'>
+          <div className=' mt-5 dark:bg-gray-900 dark:text-gray-100' id='hotel'>
+            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6 dark:bg-gray-900 dark:text-gray-100'>
               <h1 className='uppercase'>Hotel</h1>
               <p className='capitalize'>Find your hotel</p>
             </div>
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-3 gap-3 dark:bg-gray-900 dark:text-gray-100'>
               <div className='w-96 h-[400px]'>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={hotell} alt=""/>
@@ -306,10 +328,10 @@ function App() {
 
                 {/* {The starting of this Hotel details} */}
                 {showHotel1 && <div className='w-[80rem] border relative'>
-                  <div className='w-full h-2/5'>
+                  <div className='w-full h-2/5 dark:bg-gray-900 dark:text-gray-100'>
                     <img className='w-full h-full' src={hotell} alt=""/>
                   </div>
-                  <div className='bg-slate-100 text-center px-64'>
+                  <div className='bg-slate-100 text-center px-64 dark:bg-gray-900 dark:text-gray-100'>
                     <h1 className='pt-5 text-4xl font-semibold'>Hotel Brooklyn Bridge</h1>
                     <h2 className='mt-3 text-2xl font-semibold'>Brooklyn, NY United States</h2>
                     <p>Address</p>
@@ -350,7 +372,7 @@ function App() {
                 {/* {The Hotel 1 details end here} */}
 
               </div>
-              <div className='w-96 h-[400px]'>
+              <div className='w-96 h-[400px] dark:bg-gray-900 dark:text-gray-100'>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={hotel2} alt="" />
                 </div>
@@ -973,13 +995,13 @@ function App() {
           </div>
 
            {/* { The start of CRUISE} */}
-           <div className='mt-5' id='cruise'>
-            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6'>
+           <div className='mt-5 dark:bg-gray-900 dark:text-gray-100' id='cruise'>
+            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6 dark:bg-gray-900 dark:text-gray-100'>
               <h1 className='uppercase'>Cruise</h1>
               <p className='capitalize'>Find your cruise</p>
             </div>
 
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-3 gap-3 dark:bg-gray-900 dark:text-gray-100'>
               {/* The cruise 1 details start here  */}
               <div className='w-96 h-[600px]  '>
                 <div className='w-full h-1/2'>
@@ -1201,18 +1223,18 @@ function App() {
           </div>
 
            {/* { The start of TOUR} */}
-           <div className='mt-20' id='tour'>
-            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6'>
+           <div className='mt-20 dark:bg-gray-900 dark:text-gray-100' id='tour'>
+            <div className='mt-4 text-4xl font-bold font-serif w-80 text-center m-auto mb-6 dark:bg-gray-900 dark:text-gray-100'>
               <h1 className='uppercase'>Tour</h1>
               <p className='capitalize'>Find your tour</p>
             </div>
 
-            <div className='grid grid-cols-3 gap-3'>
-              <div className='w-96 h-[600px] bg-slate-50 '>
+            <div className='grid grid-cols-3 gap-3 dark:bg-gray-900 dark:text-gray-100'>
+              <div className='w-96 h-[600px] bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
                 <div className='w-full h-1/2'>
                   <img className='w-full h-full' src={Tour1} alt="tour image" />
                 </div>
-                <div className='text-center mt-3 px-10 items-start'>
+                <div className='text-center mt-3 px-10 items-start '>
                 <button className='text-red-500 text-2xl font-semibold' onClick={handleTourDetails1}>Licensed to Thrill - Family</button>
 
                   {/* {The starting of this Tour1 details} */}
@@ -1262,8 +1284,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]  bg-slate-50 '>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]  bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour2} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1271,10 +1293,10 @@ function App() {
 
                 {/* {The starting of this Tour2 details} */}
                 {showTour2 && <div className='w-[80rem] border relative -ml-[476px]'>
-                  <div className='w-full h-2/5'>
+                  <div className='w-full h-2/5 '>
                     <img className='w-full h-full' src={Tour2} alt=""/>
                   </div>
-                  <div className='bg-slate-100 text-center px-64'>
+                  <div className='bg-slate-100 text-center px-64 '>
                     <h1 className='pt-5 text-4xl font-semibold'>Six Senses Samui</h1>
                     <h2 className='mt-3 text-2xl font-semibold'>Koh Samui, Thailand</h2>
                     <p>Address</p>
@@ -1320,8 +1342,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]  bg-slate-50 '>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]  bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour3} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1329,10 +1351,10 @@ function App() {
 
                 {/* {The starting of this Tour3 details} */}
                 {showTour3 && <div className='w-[80rem] border relative -ml-[880px]'>
-                  <div className='w-full h-2/5'>
+                  <div className='w-full h-2/5 dark:bg-gray-900 dark:text-gray-100 '>
                     <img className='w-full h-full' src={Tour3} alt=""/>
                   </div>
-                  <div className='bg-slate-100 text-center px-64'>
+                  <div className='bg-slate-100 text-center px-64 dark:bg-gray-900 dark:text-gray-100'>
                     <h1 className='pt-5 text-4xl font-semibold'>Mandarin Oriental, Munich</h1>
                     <h2 className='mt-3 text-2xl font-semibold'>Munich, Germany</h2>
                     <p className='mt-5'>Neighborhood</p>
@@ -1380,8 +1402,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]  bg-slate-50 '>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]  bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour4} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1421,8 +1443,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]  bg-slate-50 '>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]  bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour5} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1479,8 +1501,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]   bg-slate-50'>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]   bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour6} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1512,8 +1534,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]   bg-slate-50'>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]   bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour7} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1545,8 +1567,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]   bg-slate-50'>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]   bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour8} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1578,8 +1600,8 @@ function App() {
                 </div>
               </div>
 
-              <div className='w-96 h-[600px]  bg-slate-50'>
-                <div className='w-full h-1/2'>
+              <div className='w-96 h-[600px]  bg-slate-50 dark:bg-gray-900 dark:text-gray-100'>
+                <div className='w-full h-1/2 dark:bg-gray-900 dark:text-gray-100'>
                   <img className='w-full h-full' src={Tour9} alt="tour image" />
                 </div>
                 <div className='text-center mt-3 px-10'>
@@ -1614,18 +1636,18 @@ function App() {
           </div>
 
            {/* { The start of ABOUT US} */}
-           <div className='mt-10' id='abou-us'>
-            <div className='mt-4 text-4xl font-bold font-serif w-200 text-center m-auto mb-6'>
+           <div className='mt-10' id='about-us'>
+            <div className='mt-4 text-4xl font-bold font-serif w-200 text-center m-auto mb-6 dark:bg-gray-900 dark:text-gray-100'>
               <h1 className='capitalize'>About Travel Experts</h1>
             </div>
-            <p className='mt-5 text-lg'> 
+            <p className='mt-5 text-lg dark:bg-gray-900 dark:text-gray-100'> 
               Travel Experts has been a premier travel design firm since 1989, made up of only the industry’s premium travel counselors. Travel Experts members are experienced professionals who operate as independent contractors, fully embracing the entrepreneurial spirit of their individual businesses. They have the travel expertise and business acumen needed to enable them to work independently while at the same time enjoying the advantages of associating with a nationally recognized premier agency.
               What this means to you, the traveler is the best possible service and attention because it is in their best interest to orchestrate an amazing trip for you. Through our membership in Virtuoso, an invitation only network of the world's best travel agencies, we can offer you our personal relationships with the top hotels, resorts, spas, lodges, airline, cruise lines and tour companies to provide you with incredible values and rare experiences - from complimentary upgrades and amenities to special recognition and privileged access.
               As you browse through our travel consultants, you will note an extensive variety of specialists who can satisfy all types of travel needs including vacation planning, family adventure, group and incentive travel, religious travel and corporate travel management. We invite you to search out the specialist that will create the perfect trip.
             </p>
           </div>
 
-          <div className='w-3/4 mx-auto mt-5 text-center'>
+          <div className='w-3/4 mx-auto mt-5 text-center dark:bg-gray-900 dark:text-gray-100'>
             <h1 className='mt-5 capitalize text-4xl font-semibold'>Our Management Team</h1>
             <h2 className='mt-5 text-2xl'>TravelExpert Team</h2>
             <div className='grid grid-cols-4 gap-3 items-center p-3 mt-5'>
@@ -1691,6 +1713,8 @@ function App() {
           </footer>
         </div>
       )}
+      
+    </div>
     </>
   );
 }
