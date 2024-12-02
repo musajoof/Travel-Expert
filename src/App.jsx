@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
-import Footer from "./Components/Footer";
 import AboutUs from "./Components/AboutUs";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Terms from "./Pages/Terms";
+import Footer from "./components/Footer";
 import Logo from "./assets/world.svg";
+import Hambuger from "./assets/menu-2.svg"
 import hotell from "./assets/hotel-1.jpeg";
 import hotel2 from "./assets/hotel-1.jpeg";
 import hotel3 from './assets/hotel-3.jpeg'
@@ -22,6 +27,14 @@ import Cruise3 from './assets/cruise3.jpeg'
 import Cruise4 from './assets/cruise4.jpeg'
 import Cruise5 from './assets/cruise5.jpeg'
 import Cruise6 from './assets/cruise6.jpeg'
+import Tour2 from './assets/Tour2.jpg'
+import Tour3 from './assets/Tour3.jpg'
+import Tour4 from './assets/Tour4.jpg'
+import Tour5 from './assets/Tour5.jpg'
+import Tour6 from './assets/Tour6.jpg'
+import Tour7 from './assets/Tour7.jpg'
+import Tour8 from './assets/Tour8.jpg'
+import Tour9 from './assets/Tour9.jpg'
 import Tour1 from "./assets/Tour1.jpg";
 import SignupForm from "./Components/SignupForm";
 import LoginForm from "./Components/LoginForm";
@@ -56,6 +69,12 @@ const App = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     console.log("Dark Mode:", !darkMode);
+  };
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
   const hotels = [
     {
@@ -292,64 +311,217 @@ const App = () => {
       details: "Guided Group Tour",
       dates: "1 Dec 2024 to 10 Dec 2024",
     },
+    {
+      title: 'Six Senses Samui',
+      location: 'Koh Samui, Thailand',
+      company: "Adventure Tours",
+      address: '9/10 Moo 5, Baan Plai Laem Bophut, Koh Samui, 84320 Thailand',
+      description:
+        'Utterly and unabashedly romantic, Six Senses Samui is the most delightful daydream come true...',
+      image: Tour2,
+      amenities: [
+        'Upgrade on arrival, subject to availability',
+        'Daily breakfast credit of $25 per person...',
+        'Complimentary Wi-Fi',
+      ],
+      features: 'Air Conditioning, Children’s Programs, Complimentary Parking...',
+      recreation: 'Golf, Water Sports',
+    },
+    {
+      title: 'Mandarin Oriental, Munich',
+      location: 'Munich, Germany',
+      company: "Adventure Tours",
+      address: 'Neuturmstrasse 1, Munich, 80331, Germany',
+      description:
+        'Set on a quiet street off the renowned Maximilianstrasse, Mandarin Oriental, Munich is praised...',
+      image: Tour3,
+      amenities: [
+        'Upgrade on arrival, subject to availability',
+        'Daily breakfast credit of $25 per person...',
+        'Complimentary Wi-Fi',
+      ],
+      features: 'Banquet Facilities, Conference Facilities, Culinary Program...',
+      recreation: 'Bicycle Rental, Fitness Center, Pool, Sauna',
+    },
+    {
+      image: Tour4,
+      title: 'Beyond Times Square',
+      location: 'New York City, NY United States',
+      company: "Adventure Tours",
+      address: ['300 Park Avenue 2nd Floor', 'New York City, New York 10022 United States'],
+      description: 'Beyond Times Square is a New York City-based destination management company with a 19-year history of delivering tailormade, luxury travel programs with authentic local experiences...',
+      amenities: {
+        features: 'Banquet Facilities, Conference Facilities, Culinary Program, Internet Access, Lounge/Bar, Restaurant, Villas',
+        recreation: 'Golf, Water Sports',
+      },
+    },
+    {
+      image: Tour5,
+      title: 'Anantara Lawana Koh Samui Resort',
+      location: 'Koh Samui, Thailand',
+      company: "Adventure Tours",
+      address: ['92/1 Moo 2 Bophut Koh Samui, 84320', 'Thailand'],
+      description: 'Designed to reflect the island’s history and culture, Anantara Lawana Koh Samui Resort features shop-house-style pool suites...',
+      amenities: {
+        features: 'Banquet Facilities, Conference Facilities, Culinary Program, Internet Access, Lounge/Bar, Restaurant, Villas',
+        recreation: 'Golf, Water Sports',
+      },
+    },
+    {
+      image: Tour6,
+      title: 'Arabian Adventures',
+      location: 'Dubai, United Arab Emirates',
+      company: "Adventure Tours",
+      address: ['Emirates Holidays Building, 4th Floor Sheikh Zayed Road', 'P.O. Box 7631 Dubai, UAE'],
+      description: 'Arabian Adventures, headquartered in Dubai, is part of the Destination and Leisure Management division of the Emirates Group...',
+    },
+    {
+      image: Tour7,
+      title: 'Unveil the Perfect Paradise - Dubai and the Maldives',
+      location: 'Dubai, United Arab Emirates',
+      company: "Adventure Tours",
+      address: ['Emirates Holidays Building, 4th Floor Sheikh Zayed Road', 'P.O. Box 7631 Dubai, UAE'],
+      description: 'Arabian Adventures, headquartered in Dubai, provides exclusive tailor-made services...',
+    },
+    {
+      image: Tour8,
+      title: 'Beyond Times Square',
+      location: 'New York City, NY United States',
+      company: "Adventure Tours",
+      address: ['300 Park Avenue 2nd Floor, New York City, NY 10022'],
+      description: 'Arabian Adventures, headquartered in Dubai, provides exclusive tailor-made services...',
+    },
+    {
+      image: Tour9,
+      title: 'Discover the wonders of Oman - 7 days 6 nights',
+      location: 'Dubai, United Arab Emirates',
+      company: "Arabian Adventures",
+      address: ['Emirates Holidays Building, 4th Floor Sheikh Zayed Road P.O. Box. 7631 Dubai', 'United Arab Emirates'],
+      description: 'Destination and Leisure Management division of the Emirates Group. With offices in Dubai, as well as associates across the world, we are the region’s leading destination management company providing services of an exceptional standard, and are perfectly placed to meet all of your requirements. With over 300 professional, multilingual staff,  to organising excursions and safaris and managing sports trips and events'
+    },
+    
   ];
 
   return (
     <Router>
-      <div className={darkMode ? 'dark' : ''} style={{ scrollBehavior: "smooth" }}>
-      <div className="min-h-screen flex flex-col">
-        {!loggedIn ? (
-          <div className="flex-grow flex justify-center items-center">
-            <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-96">
-              {showSignup ? (
-                <SignupForm onSuccess={handleSignupSuccess} />
-              ) : (
-                <LoginForm onLoginSuccess={handleLoginSuccess} />
-              )}
-              <button
-                className="mt-4 text-blue-500 hover:underline"
-                onClick={() => setShowSignup(!showSignup)}
-              >
-                {showSignup ? "Go to Login" : "Go to Signup"}
-              </button>
+      <div className={darkMode ? "dark" : ""} style={{ scrollBehavior: "smooth" }}>
+        <div className="min-h-screen flex flex-col">
+          {!loggedIn ? (
+            <div className="flex-grow flex justify-center items-center">
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-96">
+                {showSignup ? (
+                  <SignupForm onSuccess={handleSignupSuccess} />
+                ) : (
+                  <LoginForm onLoginSuccess={handleLoginSuccess} />
+                )}
+                <button
+                  className="mt-4 text-blue-500 hover:underline"
+                  onClick={() => setShowSignup(!showSignup)}
+                >
+                  {showSignup ? "Go to Login" : "Go to Signup"}
+                </button>
+              </div>
             </div>
-          </div>
-        ) : (
-          <>
-            <header className="bg-white dark:bg-gray-900 dark:text-gray-100 py-4 px-6">
-              <nav className="flex justify-between items-center">
-                <div className="text-2xl font-bold">Travel Expert</div>
-                <img className="w-12 md:w-24" src={Logo} alt="Logo" />
-                <ul className="flex justify-center items-center space-x-4 text-lg font-bold">
-                  <li>
-                    <Link to="/" className="hover:underline font-bold">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/about-us" className="hover:underline font-bold">
-                      About Us
-                    </Link>
-                  </li>
-                  <button
-                    onClick={toggleDarkMode}
-                    className="p-2 rounded focus:outline-none"
-                  >
-                    <img
-                      src={darkMode ? SunLight : SunDark}
-                      alt={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                      className="w-6 md:w-8 h-6 md:h-8 bg-red-200 p-1 rounded-xl text-center"
-                    />
-                  </button>
-                </ul>
-              </nav>
-            </header>
+          ) : (
+            <>
+              <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 dark:text-gray-100 dark:shadow-slate-200 py-4 px-6 shadow-md z-50">
+                <nav className="flex justify-between items-center">
+                  <div className="text-2xl font-bold">Travel Expert</div>
+                  <img className="w-12 md:w-24 dark:bg-slate-200 dark:rounded-full" src={Logo} alt="Logo" />
+                  {/* Hamburger Menu for small screens */}
+                  <div className="md:hidden flex items-center">
+                    <button className="text-white" onClick={toggleMenu}>
+                      <img src={Hambuger} alt="Hamburger Menu" className="w-8 h-8 dark:bg-white dark:rounded-md" />
+                    </button>
+                  </div>
+                  {/* Navigation Links */}
+                  <ul className="hidden md:flex justify-center items-center space-x-4 text-lg font-bold">
+                    <li>
+                      <Link to="/" className="hover:underline font-bold">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/about-us" className="hover:underline font-bold">
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/contact" className="hover:underline font-bold">
+                        Contact
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/privacy-policy" className="hover:underline font-bold">
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/terms" className="hover:underline font-bold">
+                        Terms of Service
+                      </Link>
+                    </li>
+                    <button
+                      onClick={toggleDarkMode}
+                      className="p-2 rounded focus:outline-none"
+                    >
+                      <img
+                        src={darkMode ? SunLight : SunDark}
+                        alt={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                        className="w-6 md:w-8 h-6 md:h-8 bg-red-200 p-1 rounded-full text-center"
+                      />
+                    </button>
+                  </ul>
+                </nav>
+                {/* Mobile Menu (Hidden by default) */}
+                <div className="md:hidden">
+                  <ul className={`flex flex-col items-center space-y-4 py-4 ${menuOpen ? "block" : "hidden"}`}>
+                    <li>
+                      <Link to="/" className="hover:underline font-bold">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/about-us" className="hover:underline font-bold">
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/contact" className="hover:underline font-bold">
+                        Contact
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/privacy-policy" className="hover:underline font-bold">
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/terms" className="hover:underline font-bold">
+                        Terms of Service
+                      </Link>
+                    </li>
+                    <button
+                      onClick={toggleDarkMode}
+                      className="p-2 rounded focus:outline-none"
+                    >
+                      <img
+                        src={darkMode ? SunLight : SunDark}
+                        alt={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                        className="w-6 md:w-8 h-6 md:h-8 bg-red-200 p-1 rounded-xl text-center"
+                      />
+                    </button>
+                  </ul>
+                </div>
+              </header>
 
-            {/* Search Bar Component */}
-            <SearchBar onSearch={handleSearch} />
 
-            {/* Display search results */}
-            <div className="mt-6 dark:bg-gray-900 dark:text-gray-100">
+
+              {/* Search Bar Component */}
+              <SearchBar onSearch={handleSearch} />
+
+              {/* Display search results */}
+              <div className="mt-6 dark:bg-gray-900 dark:text-gray-100 pt-16">
                 <h2 className="text-xl font-semibold">Search Results:</h2>
                 <ul>
                   {searchResults.length > 0 ? (
@@ -364,25 +536,26 @@ const App = () => {
                   )}
                 </ul>
               </div>
-            
-            <main className="flex-grow">
-              <Routes>
-                <Route
-                  path="/"
-                  element={<Home hotels={hotels} cruises={cruises} tours={tours} />}
-                />
-                <Route path="/about-us" element={<AboutUs />} />
-              </Routes>
-            </main>
-          </>
-        )}
-        <Footer />
-      </div>
+
+              <main className="flex-grow ">
+                <Routes>
+                  <Route
+                    path="/"
+                    element={<Home hotels={hotels} cruises={cruises} tours={tours} />}
+                  />
+                  <Route path="/about-us" element={<AboutUs />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms" element={<Terms />} />
+                </Routes>
+                <Footer/>
+              </main>
+            </>
+          )}
+        </div>
       </div>
     </Router>
   );
 };
 
 export default App;
-
-

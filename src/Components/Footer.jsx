@@ -31,7 +31,7 @@ const Footer = () => {
         </p>
         <div className="mt-3 flex justify-center gap-4">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/travelexpertsnc/?ref=ts"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-700"
@@ -39,15 +39,7 @@ const Footer = () => {
             Facebook
           </a>
           <a
-            href="https://www.twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/travelexpertsnc/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-700"

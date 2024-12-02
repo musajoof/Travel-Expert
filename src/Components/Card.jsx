@@ -13,7 +13,7 @@ const Card = ({ data }) => {
       </div>
 
       {/* Content Section */}
-      <div className="text-center mt-3 px-10">
+      <div className="text-center mt-3 px-10 ">
         <button
           className="text-red-500 text-2xl font-semibold"
           onClick={handleToggleDetails}
@@ -50,6 +50,7 @@ const Card = ({ data }) => {
         <h1>{data.details}</h1>
         <h1 className="mt-8 text-xl mb-4">{data.itinerary || data.address}</h1>
         <h2>{data.dates || ""}</h2>
+        <h2>{data.validThrough}</h2>
         <p>Promotion(s)</p>
       </div>
     </div>

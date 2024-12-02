@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import EyeOff from '../assets/eye-off.svg';
+import EyeOn from '../assets/eye.svg';
 
 const SignupForm = ({ onSignupSuccess }) => {
   const [formData, setFormData] = useState({
@@ -7,8 +9,11 @@ const SignupForm = ({ onSignupSuccess }) => {
     password: '',
     confirmPassword: '',
   });
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,21 +39,26 @@ const SignupForm = ({ onSignupSuccess }) => {
       return;
     }
 
-    // Reset error, simulate success
+    // Reset error and simulate success
     setError('');
     setSuccess('Signup successful!');
-    onSignupSuccess(); // Callback to notify the parent component
+    setFormData({ name: '', email: '', password: '', confirmPassword: '' });
+    onSignupSuccess(); // Notify parent component
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-center text-gray-700">Signup for Travel Expert</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700">
+          Signup for Travel Expert
+        </h2>
         {error && <p className="text-red-500 text-sm">{error}</p>}
         {success && <p className="text-green-500 text-sm">{success}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-600">Name</label>
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Name
+            </label>
             <input
               type="text"
               name="name"
@@ -59,7 +69,9 @@ const SignupForm = ({ onSignupSuccess }) => {
             />
           </div>
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-600">Email</label>
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Email
+            </label>
             <input
               type="email"
               name="email"
@@ -69,27 +81,51 @@ const SignupForm = ({ onSignupSuccess }) => {
               required
             />
           </div>
-          <div>
-            <label className="block mb-2 text-sm font-medium text-gray-600">Password</label>
+          <div className="relative">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Password
+            </label>
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               value={formData.password}
               onChange={handleChange}
               required
             />
+            <span
+              className="absolute right-3 top-10 cursor-pointer"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              <img
+                src={showPassword ? EyeOff : EyeOn}
+                alt="Toggle password visibility"
+                className="w-5 h-5"
+              />
+            </span>
           </div>
-          <div>
-            <label className="block mb-2 text-sm font-medium text-gray-600">Confirm Password</label>
+          <div className="relative">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
+              Confirm Password
+            </label>
             <input
-              type="password"
+              type={showConfirmPassword ? 'text' : 'password'}
               name="confirmPassword"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               value={formData.confirmPassword}
               onChange={handleChange}
               required
             />
+            <span
+              className="absolute right-3 top-10 cursor-pointer"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              <img
+                src={showConfirmPassword ? EyeOff : EyeOn}
+                alt="Toggle password visibility"
+                className="w-5 h-5"
+              />
+            </span>
           </div>
           <button
             type="submit"

@@ -18,7 +18,7 @@ const LoginForm = ({ onLoginSuccess }) => {
     }
 
     // Mock login logic - replace this with actual authentication
-    if (username === 'musajoof447@gmail.com' && password === 'gambia2017') {
+    if (username === username && password === password) {
       setError('');
       onLoginSuccess();  // Call the onLoginSuccess function to update loggedIn state
     } else {
