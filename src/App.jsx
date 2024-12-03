@@ -130,7 +130,6 @@ const App = () => {
       ],
       description: `A labyrinth of gleaming white cubes along Crete’s north coast with 152 Zen-chic rooms, villas (many with private pools), an Elemis spa, and five restaurants.`,
       category: "Hotel",
-      company: "Royal Caribbean International",
       details: "5-Star Resort",
       amenities: [
         'Upgrade on arrival, subject to availability',
@@ -518,10 +517,12 @@ const App = () => {
 
 
               {/* Search Bar Component */}
-              <SearchBar onSearch={handleSearch} />
+              <div className="mt-32">
+                <SearchBar onSearch={handleSearch} />
+              </div>
 
               {/* Display search results */}
-              <div className="mt-6 dark:bg-gray-900 dark:text-gray-100 pt-16">
+              <div className=" dark:bg-gray-900 dark:text-gray-100 ">
                 <h2 className="text-xl font-semibold">Search Results:</h2>
                 <ul>
                   {searchResults.length > 0 ? (
