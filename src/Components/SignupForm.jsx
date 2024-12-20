@@ -20,7 +20,7 @@ const SignupForm = ({ onSignupSuccess }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { name, email, password, confirmPassword } = formData;
@@ -39,15 +39,31 @@ const SignupForm = ({ onSignupSuccess }) => {
       return;
     }
 
-    // Reset error and simulate success
-    setError('');
-    setSuccess('Signup successful!');
-    setFormData({ name: '', email: '', password: '', confirmPassword: '' });
-    onSignupSuccess(); // Notify parent component
+    try {
+      const response = await fetch('http://localhost:5000/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to signup');
+      }
+
+      // Reset error and simulate success
+      setError('');
+      setSuccess('Signup successful!');
+      setFormData({ name: '', email: '', password: '', confirmPassword: '' });
+      onSignupSuccess(); // Notify parent component
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen w-[100%]">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center text-gray-700">
           Signup for Travel Expert

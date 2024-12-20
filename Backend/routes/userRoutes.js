@@ -1,5 +1,5 @@
-const express = require('express');
-const User = require('../models/User');
+import express from 'express';
+import User from '../models/User.js';
 const router = express.Router();
 
 // Register User
@@ -28,4 +28,4 @@ router.post('/login', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

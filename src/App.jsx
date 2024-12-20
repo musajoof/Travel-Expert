@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import About from "./Pages/About";
+import ItemList from "./Pages/CMS/index";
+// import ItemForm from "./Pages/cms/components/ItemForm";
 import Contact from "./Pages/Contact";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Terms from "./Pages/Terms";
-import Footer from "./components/Footer";
+import Footer from "./Components/Footer";
 import Logo from "./assets/world.svg";
 import Hambuger from "./assets/menu-2.svg"
 import hotell from "./assets/hotel-1.jpeg";
@@ -407,7 +409,7 @@ const App = () => {
         <div className="min-h-screen flex flex-col">
           {!loggedIn ? (
             <div className="flex-grow flex justify-center items-center">
-              <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-96">
+              <div className="bg-white flex flex-col dark:bg-gray-900 p-4 rounded-lg w-[70%] justify-center">
                 {showSignup ? (
                   <SignupForm onSuccess={handleSignupSuccess} />
                 ) : (
@@ -435,6 +437,11 @@ const App = () => {
                   </div>
                   {/* Navigation Links */}
                   <ul className="hidden md:flex justify-center items-center space-x-4 text-lg font-bold">
+                    <li>
+                      <Link to="/cms" className="hover:underline font-bold">
+                        CMS
+                      </Link>
+                    </li>
                     <li>
                       <Link to="/" className="hover:underline font-bold">
                         Home
@@ -548,6 +555,7 @@ const App = () => {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms" element={<Terms />} />
+                  <Route path="/cms" element={<ItemList />} />
                 </Routes>
                 <Footer/>
               </main>
