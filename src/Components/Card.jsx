@@ -47,7 +47,7 @@ const Card = ({ data }) => {
         <h1 className="text-xl">{data.name}</h1>
         <p>{data.property_type}</p>
         {/* <span className="mt-5">Details</span> */}
-        <p>{data.description}</p>
+        <p className='text-ellipsis overflow-hidden whitespace-nowrap w-full h-12'>{data.description}</p>
         <div className="mt-2 mb-4 font-bold">
           <span>Location: </span>
           <span>

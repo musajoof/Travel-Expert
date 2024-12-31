@@ -41,7 +41,7 @@ import Tour1 from "./assets/Tour1.jpg";
 import SignupForm from "./Components/SignupForm";
 import LoginForm from "./Components/LoginForm";
 import PropertyForm from "./Pages/CMS/PropertyForm";
-// import EditProperty from "./Pages/CMS/EditProperty";
+import EditProperty from "./Pages/CMS/EditProperty";
 import SearchBar from "./Components/SearchBar";
 import Card from "./Components/Card"; 
 import { searchItems } from "./Components/SearchService";
@@ -429,7 +429,7 @@ const App = () => {
           ) : (
             <>
               <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 dark:text-gray-100 dark:shadow-slate-200 py-4 px-6 shadow-md z-50">
-                <nav className="flex justify-between items-center">
+                <nav className="flex justify-between items-baseline">
                   <div className="text-2xl font-bold">Travel Expert</div>
                   <img className="w-12 md:w-24 dark:bg-slate-200 dark:rounded-full" src={Logo} alt="Logo" />
                   {/* Hamburger Menu for small screens */}
@@ -441,32 +441,32 @@ const App = () => {
                   {/* Navigation Links */}
                   <ul className="hidden md:flex justify-center items-center space-x-4 text-lg font-bold">
                     <li>
-                      <Link to="/cms" className="hover:underline font-bold">
+                      <Link to="/cms" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
                         CMS
                       </Link>
                     </li>
                     <li>
-                      <Link to="/" className="hover:underline font-bold">
+                      <Link to="/" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
                         Home
                       </Link>
                     </li>
                     <li>
-                      <Link to="/about-us" className="hover:underline font-bold">
+                      <Link to="/about-us" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
                         About Us
                       </Link>
                     </li>
                     <li>
-                      <Link to="/contact" className="hover:underline font-bold">
+                      <Link to="/contact" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
                         Contact
                       </Link>
                     </li>
                     <li>
-                      <Link to="/privacy-policy" className="hover:underline font-bold">
+                      <Link to="/privacy-policy" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
                         Privacy Policy
                       </Link>
                     </li>
                     <li>
-                      <Link to="/terms" className="hover:underline font-bold">
+                      <Link to="/terms" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
                         Terms of Service
                       </Link>
                     </li>
@@ -527,7 +527,7 @@ const App = () => {
 
 
               {/* Search Bar Component */}
-              <div className="mt-32">
+              <div className="mt-44">
                 <SearchBar onSearch={handleSearch} />
               </div>
 

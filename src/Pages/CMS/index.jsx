@@ -70,11 +70,14 @@ const CMS = () => {
                             <td>{property.name}</td>
                             <td>{property.description}</td>
                             <td>{property.price}</td>
-                            <td>
+                            <td className='flex justify-around items-center'>
                                 {/* <Button variant="warning" className="mr-2">Edit</Button> */}
                                 {/* <Button variant="danger">Delete</Button> */}
                             <Link to={`/cms/edit/${property._id}`} className="mr-2">
                                 <Button variant="warning">Edit</Button>
+                            </Link>
+                            <Link to={`/cms/delete/${property._id}`} className="mr-2">
+                                <Button variant="danger">Delete</Button>
                             </Link>
                             </td>
                         </tr>
