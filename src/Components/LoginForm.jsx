@@ -47,7 +47,7 @@ const LoginForm = ({ onLoginSuccess }) => {
         {error && <p className="text-red-500 text-sm">{error}</p>}
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-600">email</label>
+            <label className="block mb-2 text-sm font-medium text-gray-600">Email</label>
             <input
               type="text"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"

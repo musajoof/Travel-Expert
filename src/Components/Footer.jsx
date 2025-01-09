@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,26 +8,17 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Travel Expert. All rights reserved.
         </p>
         <p className="text-sm md:text-base">
-          <a
-            href="#about-us"
-            className="text-blue-500 hover:underline"
-          >
+          <Link to="/about-us" className="text-blue-500 hover:underline">
             About Us
-          </a>{" "}
+          </Link>{" "}
           |{" "}
-          <a
-            href="#contact"
-            className="text-blue-500 hover:underline"
-          >
+          <Link to="/contact" className="text-blue-500 hover:underline">
             Contact Us
-          </a>{" "}
+          </Link>{" "}
           |{" "}
-          <a
-            href="#terms"
-            className="text-blue-500 hover:underline"
-          >
+          <Link to="/terms" className="text-blue-500 hover:underline">
             Terms & Conditions
-          </a>
+          </Link>
         </p>
         <div className="mt-3 flex justify-center gap-4">
           <a
@@ -45,6 +36,14 @@ const Footer = () => {
             className="text-blue-500 hover:text-blue-700"
           >
             Instagram
+          </a>
+          <Link to="/help" className="text-blue-500 hover:underline">
+            Online Help
+          </Link>
+          <a 
+          target="_blank"
+          href="https://docs.google.com/document/d/1tabqD0qrtPTUHGkHCJEDqASXmcQbJyYfZZnwmq7Z2_M/edit?addon_store&tab=t.0" download>
+            Download User Manual
           </a>
         </div>
       </div>

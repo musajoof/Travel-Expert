@@ -43,6 +43,8 @@ import LoginForm from "./Components/LoginForm";
 import PropertyForm from "./Pages/CMS/PropertyForm";
 import EditProperty from "./Pages/CMS/EditProperty";
 import SearchBar from "./Components/SearchBar";
+import Help from './Components/Help';
+import UserManual from './Components/UserManual';
 import Card from "./Components/Card"; 
 import { searchItems } from "./Components/SearchService";
 import SunLight from './assets/SunLight.svg';
@@ -561,6 +563,8 @@ const App = () => {
                   <Route path="/cms" element={<ItemList />} />
                   <Route path="/cms/create" element={<PropertyForm />} />
                   <Route path="/cms/edit/:id" element={<EditProperty />} />
+                  <Route path="/help" element={<Help />} />
+                  <Route path="/UserManual" element={<UserManual />} />
                 </Routes>
                 <Footer/>
               </main>

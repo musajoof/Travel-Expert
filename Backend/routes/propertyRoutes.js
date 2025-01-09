@@ -64,6 +64,23 @@ router.post('/create', upload.single('image'), async (req, res) => {
   }
 });
 
+// Delete a property by ID
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedProperty = await Property.findByIdAndDelete(id);
+
+    if (!deletedProperty) {
+      return res.status(404).json({ message: 'Property not found' });
+    }
+
+    res.status(200).json({ message: 'Property deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to delete property', error });
+  }
+});
+
+
 
 
 export default router;

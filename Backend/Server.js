@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import helpRoutes from "./routes/helpRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -36,7 +37,7 @@ app.get('/', (req, res) => {
 
 //     res.status(200).json({ success: true, clientSecret: paymentIntent.client_secret });
 //   } catch (error) {
-//     console.error('Payment Error:', error);
+  //     console.error('Payment Error:', error);
 //     res.status(500).json({ success: false, message: 'Payment failed' });
 //   }
 // });
@@ -47,6 +48,7 @@ import propertyRoutes from './routes/propertyRoutes.js';
 
 app.use('/api/users', userRoutes);
 app.use('/api/properties', propertyRoutes);
+app.use("/api/help", helpRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
