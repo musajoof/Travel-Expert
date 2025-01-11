@@ -6,7 +6,7 @@ const Card = ({ data }) => {
   const handleToggleDetails = () => setShowDetails(!showDetails);
 
   return (
-    <div className="w-96 h-[600px]">
+    <div className="w-96 h-[600px] dark:text-white dark:bg-gray-900">
       {/* Image Section */}
       <div className="w-full h-1/2">
         <img className="w-full h-full" src={data.image} alt={data.name} />

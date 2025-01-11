@@ -51,6 +51,7 @@ import SunLight from './assets/SunLight.svg';
 import SunDark from './assets/SunDark.svg';
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Payment from "./Components/Payment";
 
 const App = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -411,7 +412,7 @@ const App = () => {
   return (
     <Router>
       <div className={darkMode ? "dark" : ""} style={{ scrollBehavior: "smooth" }}>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col dark:bg-gray-900 dark:text-gray-100">
           {!loggedIn ? (
             <div className="flex-grow flex justify-center items-center">
               <div className="bg-white flex flex-col dark:bg-gray-900 p-4 rounded-lg w-[70%] justify-center">
@@ -430,7 +431,7 @@ const App = () => {
             </div>
           ) : (
             <>
-              <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 dark:text-gray-100 dark:shadow-slate-200 py-4 px-6 shadow-md z-50">
+              <header className="fixed top-0 left-0 w-full bg-slate-50 dark:bg-gray-900 dark:text-gray-100 dark:shadow-slate-200 py-4 px-6 shadow-md z-50">
                 <nav className="flex justify-between items-baseline">
                   <div className="text-2xl font-bold">Travel Expert</div>
                   <img className="w-12 md:w-24 dark:bg-slate-200 dark:rounded-full" src={Logo} alt="Logo" />
@@ -441,35 +442,40 @@ const App = () => {
                     </button>
                   </div>
                   {/* Navigation Links */}
-                  <ul className="hidden md:flex justify-center items-center space-x-4 text-lg font-bold">
+                  <ul className="hidden md:flex justify-center items-center space-x-4 text-lg font-bold ">
                     <li>
-                      <Link to="/cms" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
+                      <Link to="/cms" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
                         CMS
                       </Link>
                     </li>
                     <li>
-                      <Link to="/" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
+                      <Link to="/" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
                         Home
                       </Link>
                     </li>
                     <li>
-                      <Link to="/about-us" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
+                      <Link to="/about-us" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
                         About Us
                       </Link>
                     </li>
                     <li>
-                      <Link to="/contact" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
+                      <Link to="/contact" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
                         Contact
                       </Link>
                     </li>
                     <li>
-                      <Link to="/privacy-policy" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
+                      <Link to="/privacy-policy" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
                         Privacy Policy
                       </Link>
                     </li>
                     <li>
-                      <Link to="/terms" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline">
+                      <Link to="/terms" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
                         Terms of Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/payment" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
+                        PayPal
                       </Link>
                     </li>
                     <button
@@ -479,7 +485,7 @@ const App = () => {
                       <img
                         src={darkMode ? SunLight : SunDark}
                         alt={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                        className="w-6 md:w-8 h-6 md:h-8 bg-red-200 p-1 rounded-full text-center"
+                        className="w-6 md:w-8 h-6 md:h-8 bg-red-200 p-1 rounded-full text-center dark:bg-white"
                       />
                     </button>
                   </ul>
@@ -510,6 +516,11 @@ const App = () => {
                     <li>
                       <Link to="/terms" className="hover:underline font-bold">
                         Terms of Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/payment" className="hover:underline font-bold">
+                        PayPal
                       </Link>
                     </li>
                     <button
@@ -565,6 +576,7 @@ const App = () => {
                   <Route path="/cms/edit/:id" element={<EditProperty />} />
                   <Route path="/help" element={<Help />} />
                   <Route path="/UserManual" element={<UserManual />} />
+                  <Route path="/payment" element={<Payment />} />
                 </Routes>
                 <Footer/>
               </main>

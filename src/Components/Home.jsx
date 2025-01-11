@@ -23,7 +23,7 @@ const Home = () => {
 console.log(properties)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-12 px-4">
+    <div className="min-h-screen dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-8">
           Explore Your Travel Options
