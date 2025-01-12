@@ -7,6 +7,28 @@ const Contact = () => {
       <p className="mt-4">
         Get in touch with us for more information about our tours and services.
       </p>
+      <p>Email: <a href="mailto:">musajoof447@gmail.com</a></p>
+      <p>Phone: +220 7145920</p>
+      <p>Facebook: {" "}
+        <a
+          href="https://www.facebook.com/travelexpertsnc/?ref=ts"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:text-blue-700"
+        >
+          Facebook
+        </a>
+      </p>
+      <p>Instagram: {" "}
+        <a
+          href="https://www.instagram.com/travelexpertsnc/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:text-blue-700"
+        >
+          Instagram
+        </a>
+      </p>
     </div>
   );
 };

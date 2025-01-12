@@ -34,7 +34,7 @@ const AboutUs = () => {
         </div>
         <div className="text-center mt-10">
           <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-          <p>Email: musajoof447@gmail.com</p>
+          <p>Email: <a href="mailto:">musajoof447@gmail.com</a></p>
           <p>Phone: +220 7145920</p>
         </div>
       </div>
