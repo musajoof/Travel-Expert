@@ -1,8 +1,8 @@
 const data = [
-    { id: 1, category: 'Hotels', name: 'Hotel South Beach', location: 'miami beach, FL United States' },
-    { id: 2, category: 'Hotels', name: 'Pines Resort Ibiza', location: 'Ibiza, Spain' },
-    { id: 3, category: 'Hotels', name: 'Abadia Retuerta LeDomaine', location: 'Valladolid, Spain' },
-    { id: 4, category: 'Hotels', name: 'Abaton Island Resort & Spa', location: 'Hersonissos, Crete, Greece' },
+    { id: 1, category: 'Hotels', name: 'Palmarima', location: 'Senegambia, Gambia' },
+    { id: 2, category: 'Hotels', name: 'Atlantic', location: 'Banjul, Gambia' },
+    { id: 3, category: 'Hotels', name: 'Kokoloko', location: 'Kololi, Gambia' },
+    { id: 4, category: 'Hotels', name: 'Five Star', location: 'Senegambia, Gambia' },
     { id: 5, category: 'Hotels', name: 'Abercrombie & Kent Villas', location: 'Cheltenham, United Kingdom' },
     { id: 6, category: 'Hotels', name: 'Acqualina Resort & Residences on the Beach', location: 'Miami Beach, FL United States, United Kingdom' },
     { id: 7, category: 'Hotels', name: 'Adare Manor', location: 'Limerick, Ireland' },
