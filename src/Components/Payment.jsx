@@ -53,7 +53,7 @@ const Payment = () => {
                   purchase_units: [
                     {
                       amount: {
-                        value: "200.00 ", // Replace with dynamic price
+                        value: "200.00", // Replace with dynamic price
                       },
                     },
                   ],

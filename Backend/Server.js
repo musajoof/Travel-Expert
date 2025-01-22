@@ -3,7 +3,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import helpRoutes from "./routes/helpRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -45,6 +44,7 @@ app.get('/', (req, res) => {
 // // import userRoutes from './routes/userRoutes';
 import userRoutes from './routes/userRoutes.js';
 import propertyRoutes from './routes/propertyRoutes.js';
+import helpRoutes from "./routes/helpRoutes.js";
 
 app.use('/api/users', userRoutes);
 app.use('/api/properties', propertyRoutes);
