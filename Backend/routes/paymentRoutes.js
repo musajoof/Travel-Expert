@@ -4,9 +4,9 @@
   const router = express.Router();
 
   paypal.configure({
-    mode: "https://sandbox.paypal.com", // or "live"
-    client_id: "AZTDtLKtp_fNQcQ3OxFXrTV4bt5FX3-7roSFAmAVOw60eXt6wcJY-PuKzWi2D_2arw87L8mPIbpsqOK5", // Replace with your Client ID
-    client_secret: "EJwXRZDaBmVQ2oaM33BfvpXoPVKEOIaDUN2EjQXVIG_LsFvYJE6nDM7m_ICvknxvAkAAcar8AJtbl26o", // Replace with your Secret
+    mode: "https://sandbox.paypal.com",
+    client_id: "AZTDtLKtp_fNQcQ3OxFXrTV4bt5FX3-7roSFAmAVOw60eXt6wcJY-PuKzWi2D_2arw87L8mPIbpsqOK5",
+    client_secret: "EJwXRZDaBmVQ2oaM33BfvpXoPVKEOIaDUN2EjQXVIG_LsFvYJE6nDM7m_ICvknxvAkAAcar8AJtbl26o",
   });
 
   // Verify Payment

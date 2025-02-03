@@ -22,6 +22,7 @@ import SunDark from './assets/SunDark.svg';
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Payment from "./Components/Payment";
+import BookingForm from "./Components/BookingForm";
 
 const App = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -124,6 +125,11 @@ const App = () => {
                         PayPal
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/booking" className="no-underline font-bold hover:bg-slate-100 hover:p-2 hover:rounded-md hover:text-blue-800 hover:underline dark:text-white dark:hover:text-slate-600">
+                        Booking
+                      </Link>
+                    </li>
                     <button
                       onClick={toggleDarkMode}
                       className="p-2 rounded focus:outline-none"
@@ -223,6 +229,8 @@ const App = () => {
                   <Route path="/help" element={<Help />} />
                   <Route path="/UserManual" element={<UserManual />} />
                   <Route path="/payment" element={<Payment />} />
+                  <Route path="/booking" element={<BookingForm />} />
+                  {/* <Route path="/payment" element={<Payment />} />  */}
                 </Routes>
                 <Footer/>
               </main>

@@ -42,7 +42,7 @@ const Payment = () => {
 
           <PayPalScriptProvider
             options={{
-              "client-id": "AZTDtLKtp_fNQcQ3OxFXrTV4bt5FX3-7roSFAmAVOw60eXt6wcJY-PuKzWi2D_2arw87L8mPIbpsqOK5", // Replace with your PayPal Client ID
+              "client-id": "AZTDtLKtp_fNQcQ3OxFXrTV4bt5FX3-7roSFAmAVOw60eXt6wcJY-PuKzWi2D_2arw87L8mPIbpsqOK5",
               currency: "USD",
             }}
           >
@@ -53,7 +53,7 @@ const Payment = () => {
                   purchase_units: [
                     {
                       amount: {
-                        value: "200.00", // Replace with dynamic price
+                        value: "200.00",
                       },
                     },
                   ],
